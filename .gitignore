@@ -94,4 +94,8 @@ fmod_editor.log
 
 /Assets/Plugins/FMOD/Cache/Editor.meta
 
+# Cache Folders
 /Library/PackageCache
+/Library/BurstCache
+/Library/ShaderCache
+/Library/StateCache
