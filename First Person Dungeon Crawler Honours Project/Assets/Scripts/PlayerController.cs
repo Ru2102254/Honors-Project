@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     public bool smoothMovement = true;
     public bool freeMovement = true;
     public float movementSpeed = 1f;
-    public float movementRotationSpeed = 600f;
+    public float movementRotationSpeed = 400f;
 
     public Transform orientation;
 
@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour {
     {
         moveDirection = moveAction.ReadValue<Vector2>();
         lookDirection = rotateAction.ReadValue<Vector2>();
+        
     }
     private void FixedUpdate()
     {
@@ -45,10 +46,24 @@ public class PlayerController : MonoBehaviour {
 
     void MovePlayer()
     {
+        //float horizontalMove = Input.GetAxis("Horizontal");
+        //float verticalMove = Input.GetAxis("Vertical");
+
+        //Vector3 directMove = transform.forward * verticalMove + transform.right * horizontalMove;
+        //directMove.Normalize();
+
+        
+
+       
 
         //freemovement
+        Vector2 forwardDirection = orientation.forward * moveDirection.y + orientation.right * moveDirection.x ;
+
+        //Based on camera position?
+        //transform.position = forwardDirection.normalized * movementSpeed;
+
+        //Based on X and Y
         transform.position += new Vector3(moveDirection.x, 0, moveDirection.y) * movementSpeed * Time.deltaTime;
-        
 
         //Snapping Movement
         if (!freeMovement)
@@ -71,34 +86,38 @@ public class PlayerController : MonoBehaviour {
             }
 
         }
-        else
-        {
-            toGridPos = backGridPos;
-        }
+        //else
+        //{
+        //    toGridPos = backGridPos;
+        //}
 
     }
 
     void RotatePlayer()
     {
-        if (lookDirection.y != 0)
-        {
-            float roationAmount = lookDirection.x * movementRotationSpeed * Time.deltaTime;
-            Quaternion deltaRotation = Quaternion.Euler(0, roationAmount, 0);
-            transform.rotation *= deltaRotation;
-            //NonFree Rotate
-            //transform.rotation = Quaternion.Euler(0, roationAmount, 0);
-        }
+        float rotationAmountX = lookDirection.x * movementRotationSpeed * Time.deltaTime;
+        float rotationAmountY = lookDirection.y * movementRotationSpeed * Time.deltaTime;
 
+
+
+        //rotationAmountY = Mathf.Clamp(rotationAmountY, -90f, 90f);
+
+        Quaternion deltaRotation = Quaternion.Euler(rotationAmountX, rotationAmountY, 0);
+        transform.rotation *= deltaRotation;
+        orientation.rotation *= Quaternion.Euler(0, rotationAmountY, 0);
+
+        //NonFree Rotate
+        //transform.rotation = Quaternion.Euler(0, roationAmount, 0);
     }
 
 
     ////Controlls
-    public void RotateLeft() { if (stopping) gridRotation -= Vector3.up * 90f; }
-    public void RotateRight() { if (stopping) gridRotation += Vector3.right * 90f; }
-    public void MoveForward() { if (stopping) toGridPos += transform.forward; }
-    public void MoveBack() { if (stopping) toGridPos -= transform.forward; }
-    public void MoveRight() { if (stopping) toGridPos += transform.right; }
-    public void MoveLeft() { if (stopping) toGridPos -= transform.right; }
+    //public void RotateLeft() { if (stopping) gridRotation -= Vector3.up * 90f; }
+    //public void RotateRight() { if (stopping) gridRotation += Vector3.right * 90f; }
+    //public void MoveForward() { if (stopping) toGridPos += transform.forward; }
+    //public void MoveBack() { if (stopping) toGridPos -= transform.forward; }
+    //public void MoveRight() { if (stopping) toGridPos += transform.right; }
+    //public void MoveLeft() { if (stopping) toGridPos -= transform.right; }
 
     float leeway = 0.01f;
     bool stopping
