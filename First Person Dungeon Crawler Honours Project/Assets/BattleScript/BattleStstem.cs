@@ -50,6 +50,7 @@ public class BattleStstem : MonoBehaviour
     {
         //Inflict Damage
         bool isdead = enemyUnit.TakeDamage(playerUnit.Damage);
+        dialogueText.text = playerUnit.Name + " hit for " + playerUnit.Damage;
         yield return new WaitForSeconds(2f);
 
         currState = BattleState.WAIT;
@@ -127,7 +128,8 @@ public class BattleStstem : MonoBehaviour
         switch (currState)
         {
             case BattleState.WIN:
-
+                dialogueText.text = "You Win";
+                SceneManager.LoadScene("Test Space");
                 return;
             case BattleState.LOSE:
                 SceneManager.LoadScene("Game Over");

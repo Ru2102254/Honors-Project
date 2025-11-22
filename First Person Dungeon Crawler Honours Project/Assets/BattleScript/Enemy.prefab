@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyScript
   eName: BaseEnemy
-  eMaxHP: 10
-  eCurrentHP: 10
+  eMaxHP: 15
+  eCurrentHP: 15
   eLevel: 1
   eDamage: 5

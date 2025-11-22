@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour
     public int eCurrentHP;
     public int eLevel;
     public int eDamage;
+    public int expDrop;
 
     public bool TakeDamage(int dmg)
     {
