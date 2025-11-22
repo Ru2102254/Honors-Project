@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public string eName;
-    public int eMaxHP;
-    public int eCurrentHP;
-    public int eLevel;
-    public int eDamage;
+    public string Name;
+    public int MaxHP;
+    public int CurrentHP;
+    public int Level;
+    public int Damage;
+
+    public bool TakeDamage(int dmg)
+    {
+        CurrentHP -= dmg;
+        if (CurrentHP <= 0) 
+            return true;
+        else
+            return false;
+    }
+
 }

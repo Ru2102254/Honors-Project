@@ -9,4 +9,13 @@ public class EnemyScript : MonoBehaviour
     public int eCurrentHP;
     public int eLevel;
     public int eDamage;
+
+    public bool TakeDamage(int dmg)
+    {
+        eCurrentHP -= dmg;
+        if (eCurrentHP <= 0)
+            return true;
+        else
+            return false;
+    }
 }
