@@ -1859,39 +1859,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 661951298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f97e0251ec42ab49a33b063e430336f, type: 3}
+  m_Script: {fileID: 11500000, guid: b6756481085cea843b32f6b455918b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  smoothMovement: 0
+  smoothMovement: 1
   freeMovement: 1
-  movementSpeed: 5
+  movementSpeed: 1
   movementRotationSpeed: 400
-  characterController: {fileID: 0}
   orientation: {fileID: 136429572}
-  playerInput: {fileID: 0}
-  moveAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: cc12a0e1-286a-4e99-9beb-18aa5f257edd
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  rotateAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0192368d-8fb1-4ce9-b9c9-51fceb77205b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  moveDirection: {x: 0, y: 0}
-  lookDirection: {x: 0, y: 0}
-  toGridPos: {x: 0, y: 0, z: 0}
-  backGridPos: {x: 0, y: 0, z: 0}
-  gridRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &661951304
 MonoBehaviour:
   m_ObjectHideFlags: 0
