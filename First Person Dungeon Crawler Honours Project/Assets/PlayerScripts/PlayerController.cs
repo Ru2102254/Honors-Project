@@ -25,12 +25,15 @@ public class PlayerController : MonoBehaviour {
     Vector3 backGridPos;
     Vector3 gridRotation;
 
+    private InventoryScript inventory;
+
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();
+        inventory = new InventoryScript();
     }
 
     void Update()
