@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour {
     public Transform orientation;
     int encounterBarrier = 0;
 
-    int encounterGap = 5;
-
     PlayerInput playerInput;
     InputAction moveAction;
     InputAction rotateAction;
