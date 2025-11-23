@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -62,6 +61,11 @@ public class PlayerController : MonoBehaviour {
         float speed = movementSpeed;
 
         characterController.Move(directMove * speed * Time.deltaTime);
+        
+        if (directMove.x > 0 || directMove.y > 0)
+        {
+            TriggerEncounter();
+        }
 
         //Snapping Movement
         if (!freeMovement)
@@ -106,11 +110,11 @@ public class PlayerController : MonoBehaviour {
 
     void TriggerEncounter()
     {
-        int randNumber = 0;
+        int LowLimit = 1;
         int encounterNum = 255;
-        if (randNumber >= encounterNum)
+        int randNumber = 10;
+        if (Random.Range(LowLimit, encounterNum) <= randNumber)
         {
-            randNumber = 0;
             SceneManager.LoadScene("Battle");
         }
     }
