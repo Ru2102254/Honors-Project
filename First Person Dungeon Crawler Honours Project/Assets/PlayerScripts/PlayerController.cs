@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public float movementRotationSpeed = 400f;
     private CharacterController characterController;
     public Transform orientation;
+    int encounterBarrier = 0;
 
     int encounterGap = 5;
 
@@ -35,7 +36,6 @@ public class PlayerController : MonoBehaviour {
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();
-        
     }
 
     void Update()
@@ -113,9 +113,25 @@ public class PlayerController : MonoBehaviour {
         int LowLimit = 1;
         int encounterNum = 255;
         int randNumber = 10;
-        if (Random.Range(LowLimit, encounterNum) <= randNumber)
+        
+
+        switch (encounterBarrier)
         {
-            SceneManager.LoadScene("Battle");
+            case 0:
+                if (Random.Range(LowLimit, encounterNum) <= randNumber) { encounterBarrier++; }
+                Debug.Log(encounterBarrier);
+                break;
+            case 1:
+                if (Random.Range(LowLimit, encounterNum) <= randNumber) { encounterBarrier++; }
+                Debug.Log(encounterBarrier);
+                break;
+            case 2:
+                if (Random.Range(LowLimit, encounterNum) <= randNumber) { 
+                    SceneManager.LoadScene("Battle");
+                    encounterBarrier = 0;
+                }
+                break;
+
         }
     }
 

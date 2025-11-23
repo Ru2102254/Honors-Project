@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 83
+  controlID: 99
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -422,23 +422,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a4ddffff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 14fbffff
+      m_ExpandedIDs: f0adfeff18eafeff8aeafeffa2eafeffbaeafeffd2eafeffdceafeffe2eafeff5244ffff6a44ffff8244ffff9a44ffffa444ffffaa44ffff12fbffff14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: PauseMenu
+        m_OriginalName: PauseMenu
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -1262
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 8}
@@ -841,14 +841,14 @@ MonoBehaviour:
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
-  m_isRotationLocked: 1
+  m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 4.4459457, y: 5.229317, z: 1.5068829}
+    m_Target: {x: 128.56212, y: -12.152472, z: 1.0652759}
     speed: 2
-    m_Value: {x: 4.4459457, y: 5.229317, z: 1.5068829}
+    m_Value: {x: 128.56212, y: -12.152472, z: 1.0652759}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -894,13 +894,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.086164616, y: 0.48761457, z: -0.048428744, w: -0.867472}
+    m_Target: {x: -0.038740996, y: -0.69543046, z: 0.037584435, w: -0.7165982}
     speed: 2
-    m_Value: {x: -0.086162664, y: 0.48760352, z: -0.04842765, w: -0.8674523}
+    m_Value: {x: -0.03874003, y: -0.6954131, z: 0.0375835, w: -0.71658033}
   m_Size:
-    m_Target: 8.124226
+    m_Target: 96.740326
     speed: 2
-    m_Value: 8.124226
+    m_Value: 96.740326
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -981,7 +981,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/MenuScripts/MenuPrefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -991,7 +991,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/MenuScripts/MenuPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RLDM4\Documents\GitHub\Honors-Project\First Person
     Dungeon Crawler Honours Project
@@ -999,9 +999,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 53}
-    m_SelectedIDs: 42b30000
-    m_LastClickedID: 45890
-    m_ExpandedIDs: 00000000fab1000000ca9a3b
+    m_SelectedIDs: 50210100
+    m_LastClickedID: 74064
+    m_ExpandedIDs: 00000000fab100003ab3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000082020000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
