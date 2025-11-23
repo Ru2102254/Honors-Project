@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
+
+using TMPro;
+using UnityEditor.UI;
 
 public class InventroyUI : MonoBehaviour
 {
@@ -31,10 +35,26 @@ public class InventroyUI : MonoBehaviour
         //int limitY = 4;
 
         foreach (ItemTypeScript item in inventory.GetItemList()) {
-            RectTransform itemSlotTransform =  Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>();  
+            RectTransform itemSlotTransform =  Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>(); 
             itemSlotTransform.gameObject.SetActive(true);
+
+            
+
+
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
-            x++;
+            //Image image = itemSlotTransform.Find("image").GetComponent<Image>();
+            //image.sprite = item.GetSprite();
+            TextMeshProUGUI itemName = itemSlotTransform.Find("Name").GetComponent<TextMeshProUGUI>();
+            itemName.SetText(item.itemType.ToString());
+            TextMeshProUGUI itemAmount = itemSlotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
+
+            if (item.amount > 1) {
+                itemAmount.SetText(item.amount.ToString());
+            } else {
+                itemAmount.SetText("");
+            
+            }
+                x++;
             if (x > limitX)
             {
                 x = 0;
