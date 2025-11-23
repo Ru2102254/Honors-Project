@@ -4,8 +4,10 @@ using Unity.Mathematics;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
+
 
     public bool smoothMovement = true;
     public bool freeMovement = true;
@@ -13,6 +15,8 @@ public class PlayerController : MonoBehaviour {
     public float movementRotationSpeed = 400f;
     private CharacterController characterController;
     public Transform orientation;
+
+    int encounterGap = 5;
 
     PlayerInput playerInput;
     InputAction moveAction;
@@ -25,7 +29,6 @@ public class PlayerController : MonoBehaviour {
     Vector3 backGridPos;
     Vector3 gridRotation;
 
-    private InventoryScript inventory;
 
     private void Awake()
     {
@@ -33,7 +36,7 @@ public class PlayerController : MonoBehaviour {
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();
-        inventory = new InventoryScript();
+        
     }
 
     void Update()
@@ -99,6 +102,17 @@ public class PlayerController : MonoBehaviour {
 
         //NonFree Rotate
         //transform.rotation = Quaternion.Euler(0, roationAmount, 0);
+    }
+
+    void TriggerEncounter()
+    {
+        int randNumber = 0;
+        int encounterNum = 255;
+        if (randNumber >= encounterNum)
+        {
+            randNumber = 0;
+            SceneManager.LoadScene("Battle");
+        }
     }
 
 

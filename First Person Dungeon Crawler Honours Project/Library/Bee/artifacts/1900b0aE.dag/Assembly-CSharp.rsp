@@ -447,6 +447,7 @@
 "Assets/MenuScripts/MainMenu.cs"
 "Assets/MenuScripts/PauseMenuScript.cs"
 "Assets/PlayerScripts/PlayerController.cs"
+"Assets/PlayerScripts/PlayerInventory.cs"
 "Assets/PlayerScripts/PlayerStats.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
