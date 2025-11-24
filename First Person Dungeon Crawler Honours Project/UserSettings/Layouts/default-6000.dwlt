@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 103
+  controlID: 46
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0cad0000
-      m_LastClickedID: 44300
-      m_ExpandedIDs: ccecffff14fbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 1edeffff0cfbffff14fbffff0aad0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -441,7 +441,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 8}
+        m_ClientGUIView: {fileID: 3}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -846,9 +846,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -49.49983, y: 0.5085174, z: -100.90498}
+    m_Target: {x: -15.243842, y: -2.8464098, z: -2.9204144}
     speed: 2
-    m_Value: {x: -49.49983, y: 0.5085174, z: -100.90498}
+    m_Value: {x: -15.243842, y: -2.8464098, z: -2.9204144}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -894,13 +894,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.0010097319, y: 0.97386205, z: -0.0043867747, w: -0.22720623}
+    m_Target: {x: 0.098476276, y: -0.7198549, z: 0.10438155, w: 0.6791305}
     speed: 2
-    m_Value: {x: -0.0010097066, y: 0.9738377, z: -0.004386665, w: -0.22720054}
+    m_Value: {x: 0.09847616, y: -0.71985406, z: 0.10438142, w: 0.67912966}
   m_Size:
-    m_Target: 56.922443
+    m_Target: 12.124355
     speed: 2
-    m_Value: 56.922443
+    m_Value: 12.124355
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -981,7 +981,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/MenuScripts/MenuPrefabs
+    - Assets/Interactions
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -991,16 +991,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/MenuScripts/MenuPrefabs
+  - Assets/Interactions
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RLDM4\Documents\GitHub\Honors-Project\First Person
     Dungeon Crawler Honours Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 53}
-    m_SelectedIDs: e0b30000
-    m_LastClickedID: 46048
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: deb30000
+    m_LastClickedID: 46046
     m_ExpandedIDs: 000000006eb30000d2b3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 995
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

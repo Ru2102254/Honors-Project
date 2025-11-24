@@ -440,6 +440,8 @@
 "Assets/BattleScript/BattleStstem.cs"
 "Assets/BattleScript/EnemyScript.cs"
 "Assets/BattleScript/HUDScript.cs"
+"Assets/Interactions/InteractObject.cs"
+"Assets/Interactions/PlayerInteractions.cs"
 "Assets/ItemAssets/ItemAssets.cs"
 "Assets/MenuScripts/GameOver.cs"
 "Assets/MenuScripts/Inventory/InventoryScript.cs"
