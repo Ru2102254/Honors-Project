@@ -6,12 +6,19 @@ public class PlayerLookUI : MonoBehaviour
     public TextMeshProUGUI HPText;
     public TextMeshProUGUI LVLText;
     public TextMeshProUGUI NameText;
+    public bool UIVisable;
+    private Transform HUDCanvas;
 
     private void Awake()
     {
         CheckHealth();
         CheckLevel();
         CheckName();
+        HUDCanvas = transform.Find("PlayerHUDCanvas");
+        if (UIVisable)
+        {
+           HUDCanvas.gameObject.SetActive(true);
+        }
     }
 
     private void Update()

@@ -450,6 +450,7 @@
 "Assets/MenuScripts/MainMenu.cs"
 "Assets/MenuScripts/PauseMenuScript.cs"
 "Assets/PlayerScripts/PlayerController.cs"
+"Assets/PlayerScripts/PlayerHUDScript.cs"
 "Assets/PlayerScripts/PlayerInventory.cs"
 "Assets/PlayerScripts/PlayerLookUI.cs"
 "Assets/PlayerScripts/PlayerStats.cs"
