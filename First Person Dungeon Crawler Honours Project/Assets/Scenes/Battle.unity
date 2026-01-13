@@ -2032,7 +2032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleStstem
   currState: 0
-  playerPrefab: {fileID: 7862688070062534868, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
   enemyPrefab: {fileID: 6058302479629960623, guid: ec92f0b6a439bf44daf7ae1716cdd266, type: 3}
   enemyBattleStation: {fileID: 1826699404818662961, guid: 903374a999badb94585c63e8e55193ca, type: 3}
   playerBattleStation: {fileID: 7518036298803702321, guid: 4bec66175d66a2e44af2229488827839, type: 3}

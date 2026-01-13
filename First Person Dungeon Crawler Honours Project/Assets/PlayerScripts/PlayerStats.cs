@@ -14,6 +14,28 @@ public class PlayerStats : MonoBehaviour
     int carryEXP;
     int increaseToNext;
 
+    public static PlayerStats instance;
+
+    private void Awake()
+    {
+        DataCarryScript.instance.nameData = Name;
+        DataCarryScript.instance.maxHPData = MaxHP;
+        DataCarryScript.instance.currHPData = CurrentHP;
+        DataCarryScript.instance.levelData = Level;
+        DataCarryScript.instance.damageData = Damage;
+        DataCarryScript.instance.expToNextData = expToNext;
+        DataCarryScript.instance.currEXPData = currEXP;
+    }
+
+    private void Update()
+    {
+        MaxHP = DataCarryScript.instance.MaxHPData;
+        CurrentHP = DataCarryScript.instance.currHPData;
+        Level = DataCarryScript.instance.levelData;
+        Damage = DataCarryScript.instance.damageData;
+        expToNext = DataCarryScript.instance.expToNextData;
+        currEXP = DataCarryScript.instance.currEXPData;
+    }
     public bool TakeDamage(int dmg)
     {
         CurrentHP -= dmg;

@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour {
                 break;
             case 2:
                 if (Random.Range(LowLimit, encounterNum) <= randNumber) { 
-                    SceneManager.LoadScene("Battle");
+                    SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
                     encounterBarrier = 0;
                 }
                 break;

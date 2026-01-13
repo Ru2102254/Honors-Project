@@ -15,7 +15,9 @@ public class EnemyScript : MonoBehaviour
     {
         eCurrentHP -= dmg;
         if (eCurrentHP <= 0)
+        {
             return true;
+        }
         else
             return false;
     }

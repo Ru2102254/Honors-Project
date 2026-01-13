@@ -10,13 +10,11 @@ public enum BattleState { START, PLAYERPHASE, ENEMYPHASE, WIN, LOSE, WAIT }
 public class BattleStstem : MonoBehaviour
 {
     public BattleState currState;
-    public GameObject playerPrefab;
     public GameObject enemyPrefab;
 
     public Transform enemyBattleStation;
     public Transform playerBattleStation;
 
-    PlayerStats playerUnit;
     EnemyScript enemyUnit;
 
     public TextMeshProUGUI dialogueText;
@@ -27,19 +25,18 @@ public class BattleStstem : MonoBehaviour
 
     void Start()
     {
+        
         currState = BattleState.START;
         StartCoroutine(BattleSetup());
     }
 
     IEnumerator BattleSetup()
     {
-        GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-        playerUnit = playerGO.GetComponent<PlayerStats>();
         GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<EnemyScript>();
         dialogueText.text = "Accosted by " + enemyUnit.eName;
 
-        playerHUD.setHUD(playerUnit);
+        playerHUD.setHUD();
 
         yield return new WaitForSeconds(2f);
         currState = BattleState.PLAYERPHASE;
@@ -49,8 +46,8 @@ public class BattleStstem : MonoBehaviour
     IEnumerator PlayerAttack()
     {
         //Inflict Damage
-        bool isdead = enemyUnit.TakeDamage(playerUnit.Damage);
-        dialogueText.text = playerUnit.Name + " hit for " + playerUnit.Damage;
+        bool isdead = enemyUnit.TakeDamage(DataCarryScript.instance.damageData);
+        dialogueText.text = DataCarryScript.instance.nameData + " hit for " + DataCarryScript.instance.damageData;
         yield return new WaitForSeconds(2f);
 
         currState = BattleState.WAIT;
@@ -107,8 +104,8 @@ public class BattleStstem : MonoBehaviour
         dialogueText.text = enemyUnit.eName + " is Attacking";
         yield return new WaitForSeconds(1f);
 
-        bool isdead = playerUnit.TakeDamage(enemyUnit.eDamage);
-        playerHUD.setHP(playerUnit.CurrentHP);
+        bool isdead = TakeDamage(enemyUnit.eDamage);
+        playerHUD.setHP(DataCarryScript.instance.currHPData);
 
         yield return new WaitForSeconds(1f);
 
@@ -123,13 +120,25 @@ public class BattleStstem : MonoBehaviour
         }
     }
 
+    bool TakeDamage(int dmg)
+    {
+        DataCarryScript.instance.currHPData -= dmg;
+        if (DataCarryScript.instance.currHPData <= 0)
+            return true;
+        else
+            return false;
+    }
+
+
     void EndBattle()
     {
         switch (currState)
         {
             case BattleState.WIN:
+
+                Destroy(enemyUnit.gameObject);
                 dialogueText.text = "You Win";
-                SceneManager.LoadScene("Test Space");
+                SceneManager.UnloadSceneAsync("Battle");
                 return;
             case BattleState.LOSE:
                 SceneManager.LoadScene("Game Over");
@@ -137,5 +146,4 @@ public class BattleStstem : MonoBehaviour
         }
         
     }
-
 }

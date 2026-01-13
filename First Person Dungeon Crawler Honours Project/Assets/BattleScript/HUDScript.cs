@@ -11,12 +11,12 @@ public class HUDScript : MonoBehaviour
     public TextMeshProUGUI playerLevel;
     public Slider hpSlider;
 
-    public void setHUD(PlayerStats player)
+    public void setHUD()
     {
-        playerName.text = player.Name;
-        playerLevel.text = "Lvl " + player.Level;
-        hpSlider.maxValue = player.MaxHP;
-        hpSlider.value = player.CurrentHP;
+        playerName.text = DataCarryScript.instance.nameData;
+        playerLevel.text = "Lvl " + DataCarryScript.instance.levelData;
+        hpSlider.maxValue = DataCarryScript.instance.maxHPData;
+        hpSlider.value = DataCarryScript.instance.currHPData;
     }
     public void setHP(int hp)
     {
