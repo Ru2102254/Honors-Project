@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-
+    public bool inBattle = false;
     public bool smoothMovement = true;
     public bool freeMovement = true;
     public float movementSpeed = 1f;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
     Vector3 backGridPos;
     Vector3 gridRotation;
 
+    public static PlayerController instace;
 
     private void Awake()
     {
@@ -34,18 +35,24 @@ public class PlayerController : MonoBehaviour {
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();
+        DataCarryScript.instance.inBattle = inBattle;
+
     }
 
     void Update()
     {
+        inBattle = DataCarryScript.instance.inBattle;
         moveDirection = moveAction.ReadValue<Vector2>();
         lookDirection = rotateAction.ReadValue<Vector2>();
-        
     }
     private void FixedUpdate()
     {
-        MovePlayer();
-        RotatePlayer();
+        if (!inBattle)
+        {
+
+            MovePlayer();
+            RotatePlayer();
+        }
     }
 
     void MovePlayer()
@@ -126,6 +133,7 @@ public class PlayerController : MonoBehaviour {
             case 2:
                 if (Random.Range(LowLimit, encounterNum) <= randNumber) { 
                     SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
+                    DataCarryScript.instance.inBattle = true;
                     encounterBarrier = 0;
                 }
                 break;

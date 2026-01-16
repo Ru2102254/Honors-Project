@@ -29,7 +29,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        MaxHP = DataCarryScript.instance.MaxHPData;
+        MaxHP = DataCarryScript.instance.maxHPData;
         CurrentHP = DataCarryScript.instance.currHPData;
         Level = DataCarryScript.instance.levelData;
         Damage = DataCarryScript.instance.damageData;

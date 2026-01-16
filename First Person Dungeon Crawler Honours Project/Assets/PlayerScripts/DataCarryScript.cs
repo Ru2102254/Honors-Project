@@ -10,6 +10,7 @@ public class DataCarryScript : MonoBehaviour
     public int Damagedata;
     public int ExpToNextData;
     public int CurrEXPData;
+    public bool InBattle;
 
     public string nameData { get => NameData; set => NameData = value; }
     public int maxHPData { get => MaxHPData; set => MaxHPData = value; }
@@ -18,6 +19,7 @@ public class DataCarryScript : MonoBehaviour
     public int damageData { get => Damagedata; set => Damagedata = value; }
     public int expToNextData { get => ExpToNextData; set => ExpToNextData = value; }
     public int currEXPData { get => CurrEXPData; set => CurrEXPData = value; }
+    public bool inBattle { get => InBattle; set => InBattle = value; }
 
     public static DataCarryScript instance;
 
