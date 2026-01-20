@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     private CharacterController characterController;
     public Transform orientation;
     int encounterBarrier = 0;
+    public int randNumber = 0;
 
     PlayerInput playerInput;
     InputAction moveAction;
@@ -35,7 +36,6 @@ public class PlayerController : MonoBehaviour {
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();
-        DataCarryScript.instance.inBattle = inBattle;
 
     }
 
@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour {
     {
         int LowLimit = 1;
         int encounterNum = 255;
-        int randNumber = 10;
         
 
         switch (encounterBarrier)

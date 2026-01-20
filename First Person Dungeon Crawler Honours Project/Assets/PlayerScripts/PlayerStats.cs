@@ -16,16 +16,6 @@ public class PlayerStats : MonoBehaviour
 
     public static PlayerStats instance;
 
-    private void Awake()
-    {
-        DataCarryScript.instance.nameData = Name;
-        DataCarryScript.instance.maxHPData = MaxHP;
-        DataCarryScript.instance.currHPData = CurrentHP;
-        DataCarryScript.instance.levelData = Level;
-        DataCarryScript.instance.damageData = Damage;
-        DataCarryScript.instance.expToNextData = expToNext;
-        DataCarryScript.instance.currEXPData = currEXP;
-    }
 
     private void Update()
     {

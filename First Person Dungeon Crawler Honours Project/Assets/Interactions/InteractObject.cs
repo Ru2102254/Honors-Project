@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class InteractObject : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class InteractObject : MonoBehaviour
     public void Interact()
     {
         onInteract.Invoke();
+    }
+
+    public void MoveFloor()
+    {
+        SceneManager.LoadScene("Level2");
     }
 
 }

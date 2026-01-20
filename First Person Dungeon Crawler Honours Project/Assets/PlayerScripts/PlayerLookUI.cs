@@ -14,7 +14,7 @@ public class PlayerLookUI : MonoBehaviour
         CheckHealth();
         CheckLevel();
         CheckName();
-        HUDCanvas = transform.Find("PlayerHUDCanvas");
+        HUDCanvas = transform.Find("PlayerHUD/PlayerHUDCanvas");
         if (UIVisable)
         {
            HUDCanvas.gameObject.SetActive(true);
@@ -28,18 +28,18 @@ public class PlayerLookUI : MonoBehaviour
 
     void CheckHealth()
     {
-        PlayerStats playerStats = GetComponent<PlayerStats>();
-        HPText.text = playerStats.CurrentHP + " / " + playerStats.MaxHP;
+        
+        HPText.text = DataCarryScript.instance.currHPData+ " / " + DataCarryScript.instance.maxHPData;
     }
     void CheckLevel()
     {
         PlayerStats levelStats = GetComponent<PlayerStats>();
-        LVLText.text = "" + levelStats.Level;
+        LVLText.text = "" + DataCarryScript.instance.levelData;
     }
     void CheckName()
     {
         PlayerStats levelStats = GetComponent<PlayerStats>();
-        NameText.text = "" + levelStats.Name;
+        NameText.text = "" + DataCarryScript.instance.nameData;
     }
 
 
