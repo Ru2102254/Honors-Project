@@ -25,7 +25,7 @@ public class BattleStstem : MonoBehaviour
 
     void Start()
     {
-        DataCarryScript.instance.inBattle = true;
+        DataCarryScript.instance.movementDisabled = true;
         currState = BattleState.START;
         StartCoroutine(BattleSetup());
     }
@@ -139,7 +139,7 @@ public class BattleStstem : MonoBehaviour
                 Destroy(enemyUnit.gameObject);
                 dialogueText.text = "You Win";
                 SceneManager.UnloadSceneAsync("Battle");
-                DataCarryScript.instance.inBattle = false;
+                DataCarryScript.instance.movementDisabled = false;
                 return;
             case BattleState.LOSE:
                 SceneManager.LoadScene("Game Over");

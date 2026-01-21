@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-    public bool inBattle = false;
+    public bool movementDisabled = false;
     public bool smoothMovement = true;
     public bool freeMovement = true;
     public float movementSpeed = 1f;
@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        inBattle = DataCarryScript.instance.inBattle;
+        movementDisabled = DataCarryScript.instance.movementDisabled;
         moveDirection = moveAction.ReadValue<Vector2>();
         lookDirection = rotateAction.ReadValue<Vector2>();
     }
     private void FixedUpdate()
     {
-        if (!inBattle)
+        if (!movementDisabled)
         {
 
             MovePlayer();
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour {
             case 2:
                 if (Random.Range(LowLimit, encounterNum) <= randNumber) { 
                     SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
-                    DataCarryScript.instance.inBattle = true;
+                    DataCarryScript.instance.movementDisabled = true;
                     encounterBarrier = 0;
                 }
                 break;
