@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 44
+  controlID: 96
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 1108
     height: 742
-  m_MinSize: {x: 50, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 52, y: 76}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -422,23 +422,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 7a580000
       m_LastClickedID: 0
-      m_ExpandedIDs: 14fbfffff4ffffff26ae0000
+      m_ExpandedIDs: e6c0ffff80ddffff86dfffff84e5ffff62ecffffe4f2ffff14fbffff0eb7000018b7000048b7000050b700006ab7000072b70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Text (TMP)
+        m_OriginalName: Text (TMP)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -8844
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 8}
@@ -846,9 +846,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 9.995355, y: 8.761957, z: -2.980958}
+    m_Target: {x: 557.7026, y: 410.8932, z: -8.293091}
     speed: 2
-    m_Value: {x: 9.995355, y: 8.761957, z: -2.980958}
+    m_Value: {x: 557.7026, y: 410.8932, z: -8.293091}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -894,17 +894,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.10919841, y: 0.75070596, z: -0.1286057, w: -0.6389377}
+    m_Target: {x: 0.06294648, y: 0.019460103, z: -0.0012276275, w: 0.9978294}
     speed: 2
-    m_Value: {x: -0.109183975, y: 0.7506067, z: -0.12858869, w: -0.63885325}
+    m_Value: {x: 0.0629463, y: 0.019460045, z: -0.0012276239, w: 0.9978264}
   m_Size:
-    m_Target: 0.0021844346
+    m_Target: 602.2829
     speed: 2
-    m_Value: 0.0021844346
+    m_Value: 602.2829
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0
@@ -981,7 +981,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/BattleScript
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -991,17 +991,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/BattleScript
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RLDM4\Documents\GitHub\Honors-Project\First Person
     Dungeon Crawler Honours Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 30}
-    m_SelectedIDs: 1ab60000
-    m_LastClickedID: 46618
-    m_ExpandedIDs: 000000001ab6000000ca9a3b
+    scrollPos: {x: 0, y: 31}
+    m_SelectedIDs: 7ab60000
+    m_LastClickedID: 46714
+    m_ExpandedIDs: 000000001cb6000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1030,7 +1030,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001ab60000
+    m_ExpandedIDs: 000000001cb60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

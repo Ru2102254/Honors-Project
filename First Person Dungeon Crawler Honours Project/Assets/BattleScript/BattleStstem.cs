@@ -22,7 +22,6 @@ public class BattleStstem : MonoBehaviour
     public HUDScript playerHUD;
     public HUDScript enemyHUD;
 
-
     void Start()
     {
         DataCarryScript.instance.movementDisabled = true;
@@ -66,6 +65,57 @@ public class BattleStstem : MonoBehaviour
         }
     }
 
+    public IEnumerator TalkStopFight()
+    {
+        int RandStopFight = 20;
+        int RandStopFightLow = 1;
+        int RandStopFightLimit= 100;
+
+
+        dialogueText.text = "You want to stop?";
+        yield return new WaitForSeconds(0.1f);
+        if (Random.Range(RandStopFightLow, RandStopFightLimit) <= RandStopFight) {
+            EndBattle();
+        }
+    }
+
+    IEnumerator TalkItem()
+    {
+        int RandItem = 20;
+        int RandItemLow = 1;
+        int RandItemLimit = 100;
+        dialogueText.text = "You want an item?";
+        yield return new WaitForSeconds(0.1f);
+        if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+        {
+            GetItemOrMoney(0);
+        }
+    }
+    IEnumerator TalkMoney()
+    {
+        int RandItem = 20;
+        int RandItemLow = 1;
+        int RandItemLimit = 100;
+        dialogueText.text = "You want an item?";
+        yield return new WaitForSeconds(0.1f);
+        if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+        {
+            GetItemOrMoney(1);
+        }
+    }
+
+
+    IEnumerator GetItemOrMoney(int itemOrMoney)
+    {
+        yield return new WaitForSeconds(0.1f);
+        switch (itemOrMoney) {
+            case 0:
+                break;
+            case 1:
+                break;
+        }
+    }
+
     void PlayerPhase()
     {
         dialogueText.text = "What do you do";
@@ -78,10 +128,22 @@ public class BattleStstem : MonoBehaviour
         StartCoroutine(PlayerAttack());
     }
 
-    public void OnTalk()
+    public void OnTalk(int talkValue)
     {
         if (currState != BattleState.PLAYERPHASE) return;
-
+        dialogueText.text = "What do you want";
+        switch (talkValue)
+        {
+            case 0:
+                StartCoroutine(TalkStopFight());
+                break;
+            case 1:
+                StartCoroutine(TalkItem());
+                break;
+            case 2:
+                StartCoroutine(TalkMoney());
+                break;
+        }
         StartCoroutine(PlayerAttack());
     }
 

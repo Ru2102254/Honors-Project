@@ -11,6 +11,7 @@ public class PlayerStats : MonoBehaviour
     public int Damage;
     public int expToNext;
     public int currEXP;
+    public int currMoney;
     int carryEXP;
     int increaseToNext;
 
@@ -25,6 +26,7 @@ public class PlayerStats : MonoBehaviour
         Damage = DataCarryScript.instance.damageData;
         expToNext = DataCarryScript.instance.expToNextData;
         currEXP = DataCarryScript.instance.currEXPData;
+        currMoney = DataCarryScript.instance.currMoneydata;
     }
     public bool TakeDamage(int dmg)
     {
