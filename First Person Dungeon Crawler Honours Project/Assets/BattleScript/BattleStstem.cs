@@ -88,7 +88,7 @@ public class BattleStstem : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
         {
-            GetItemOrMoney(0);
+           
         }
     }
     IEnumerator TalkMoney()
@@ -96,23 +96,12 @@ public class BattleStstem : MonoBehaviour
         int RandItem = 20;
         int RandItemLow = 1;
         int RandItemLimit = 100;
+        int MoneyGain = 20;
         dialogueText.text = "You want an item?";
         yield return new WaitForSeconds(0.1f);
         if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
         {
-            GetItemOrMoney(1);
-        }
-    }
-
-
-    IEnumerator GetItemOrMoney(int itemOrMoney)
-    {
-        yield return new WaitForSeconds(0.1f);
-        switch (itemOrMoney) {
-            case 0:
-                break;
-            case 1:
-                break;
+            DataCarryScript.instance.CurrMoneyData += MoneyGain;
         }
     }
 
