@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 98
+  controlID: 95
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -521,8 +521,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: beac0000
-      m_LastClickedID: 44222
+      m_SelectedIDs: 
+      m_LastClickedID: 0
       m_ExpandedIDs: 14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -985,7 +985,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -995,11 +995,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.037443954, y: -0.13715646, z: 0.0051855333, w: 0.98984015}
     speed: 2
-    m_Value: {x: 0.03595872, y: -0.13716242, z: 0.0049797227, w: 0.9898832}
+    m_Value: {x: -0.03744396, y: 0.13715646, z: -0.0051855333, w: -0.9898402}
   m_Size:
     m_Target: 0.84179425
     speed: 2
-    m_Value: 0.88145995
+    m_Value: 0.84179425
   m_Ortho:
     m_Target: 0
     speed: 2
