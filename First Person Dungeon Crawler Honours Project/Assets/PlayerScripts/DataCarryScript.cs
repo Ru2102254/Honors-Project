@@ -12,6 +12,7 @@ public class DataCarryScript : MonoBehaviour
     public int CurrEXPData;
     public int CurrMoneyData;
     public bool MovementDisabled;
+    public Vector3 PlayerPositionData;
 
     public string nameData { get => NameData; set => NameData = value; }
     public int maxHPData { get => MaxHPData; set => MaxHPData = value; }
@@ -22,6 +23,7 @@ public class DataCarryScript : MonoBehaviour
     public int currEXPData { get => CurrEXPData; set => CurrEXPData = value; }
     public int currMoneydata { get => CurrMoneyData; set => CurrMoneyData = value; }
     public bool movementDisabled { get => MovementDisabled; set => MovementDisabled = value; }
+    public Vector3 playerposition { get => PlayerPositionData; set => PlayerPositionData = value; }
 
     public static DataCarryScript instance;
 

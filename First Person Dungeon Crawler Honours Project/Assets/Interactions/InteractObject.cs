@@ -25,7 +25,18 @@ public class InteractObject : MonoBehaviour
     }
     public void MoveFloor(int floorNum)
     {
-        StartCoroutine("MoveToZeroCorutine");
+        StartCoroutine("MoveToZeroCorutine", floorNum);
+
+    }
+    IEnumerator MoveToZeroCorutine(int floorNum)
+    {
+        DataCarryScript.instance.movementDisabled = true;
+        yield return new WaitForSeconds(0.1f);
+        DataCarryScript.instance.PlayerPositionData = new Vector3(0,1,0);
+        player.transform.rotation = new Quaternion(0,0,0,0);
+        yield return new WaitForSeconds(0.1f);
+        DataCarryScript.instance.movementDisabled = false;
+
         switch (floorNum)
         {
             case 0:
@@ -38,19 +49,9 @@ public class InteractObject : MonoBehaviour
                 SceneManager.LoadScene("Level4");
                 break;
             case 3:
-                SceneManager.LoadScene("Level5");
+                SceneManager.LoadScene("Level5_FinalLevel");
                 break;
-
         }
-    }
-    IEnumerator MoveToZeroCorutine()
-    {
-        DataCarryScript.instance.movementDisabled = true;
-        yield return new WaitForSeconds(0.01f);
-        player.transform.position = new Vector3(0,1,0);
-        yield return new WaitForSeconds(0.01f);
-        DataCarryScript.instance.movementDisabled = false;
-        
     }
 
 }

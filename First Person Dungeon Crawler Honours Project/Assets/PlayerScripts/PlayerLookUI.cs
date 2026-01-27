@@ -33,12 +33,10 @@ public class PlayerLookUI : MonoBehaviour
     }
     void CheckLevel()
     {
-        PlayerStats levelStats = GetComponent<PlayerStats>();
         LVLText.text = "" + DataCarryScript.instance.levelData;
     }
     void CheckName()
     {
-        PlayerStats levelStats = GetComponent<PlayerStats>();
         NameText.text = "" + DataCarryScript.instance.nameData;
     }
 

@@ -49,9 +49,11 @@ public class PlayerController : MonoBehaviour {
     {
         if (!movementDisabled)
         {
-
             MovePlayer();
             RotatePlayer();
+        }
+        else {
+            transform.position = DataCarryScript.instance.playerposition;
         }
     }
 
