@@ -1446,6 +1446,7 @@ MonoBehaviour:
   HPText: {fileID: 1582723191986344119}
   LVLText: {fileID: 8232201378214402553}
   NameText: {fileID: 7014692165895000604}
+  LocationText: {fileID: 915487688986023248}
   UIVisable: 0
 --- !u!1 &8511263430888928678
 GameObject:

@@ -40,15 +40,19 @@ public class InteractObject : MonoBehaviour
         switch (floorNum)
         {
             case 0:
+                DataCarryScript.instance.locationData = "Level 2";
                 SceneManager.LoadScene("Level2");
                 break;
             case 1:
+                DataCarryScript.instance.locationData = "Level 3";
                 SceneManager.LoadScene("Level3");
                 break;
             case 2:
+                DataCarryScript.instance.locationData = "Level 4";
                 SceneManager.LoadScene("Level4");
                 break;
             case 3:
+                DataCarryScript.instance.locationData = "Level 5";
                 SceneManager.LoadScene("Level5_FinalLevel");
                 break;
         }

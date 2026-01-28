@@ -6,6 +6,7 @@ public class PlayerLookUI : MonoBehaviour
     public TextMeshProUGUI HPText;
     public TextMeshProUGUI LVLText;
     public TextMeshProUGUI NameText;
+    public TextMeshProUGUI LocationText;
     public bool UIVisable;
     private Transform HUDCanvas;
 
@@ -14,6 +15,7 @@ public class PlayerLookUI : MonoBehaviour
         CheckHealth();
         CheckLevel();
         CheckName();
+        CheckLocation();
         HUDCanvas = transform.Find("PlayerHUD/PlayerHUDCanvas");
         if (UIVisable)
         {
@@ -28,8 +30,7 @@ public class PlayerLookUI : MonoBehaviour
 
     void CheckHealth()
     {
-        
-        HPText.text = DataCarryScript.instance.currHPData+ " / " + DataCarryScript.instance.maxHPData;
+        HPText.text = DataCarryScript.instance.currHPData + " / " + DataCarryScript.instance.maxHPData;
     }
     void CheckLevel()
     {
@@ -38,6 +39,10 @@ public class PlayerLookUI : MonoBehaviour
     void CheckName()
     {
         NameText.text = "" + DataCarryScript.instance.nameData;
+    }
+
+    void CheckLocation() {
+        LocationText.text = "" + DataCarryScript.instance.locationData;
     }
 
 
