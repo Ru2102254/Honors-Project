@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 85
+  controlID: 99
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -69,8 +69,8 @@ MonoBehaviour:
     y: 0
     width: 455
     height: 981
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PlayerScripts
+    - Assets/Textures
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -336,17 +336,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/PlayerScripts
+  - Assets/Textures
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RLDM4\Documents\GitHub\Honors-Project\First Person
     Dungeon Crawler Honours Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f0b60000
-    m_LastClickedID: 46832
-    m_ExpandedIDs: 0000000080b6000000ca9a3b
+    scrollPos: {x: 0, y: 80}
+    m_SelectedIDs: 70b70000
+    m_LastClickedID: 46960
+    m_ExpandedIDs: 0000000088b600000eb7000010b7000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -375,7 +375,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000080b60000
+    m_ExpandedIDs: 0000000088b60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,24 +520,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 22530000
-      m_LastClickedID: 0
-      m_ExpandedIDs: e0adfdff4abffdff54c4fdff0acbfdff6ef8fdff2005feff961ffeffc234feffc052feff266afeffc2b7feff6ccefeffe8d7feff84eafeff0ef4feff32fafeff9a03ffff1615ffff3618ffffb01cffffc622ffffc827ffff162effff643bffffd23fffff5044ffff9e4fffffae87fffffe8bffffc290ffffa895ffff7c9affff14fbfffff4ffffff
+      scrollPos: {x: 0, y: 120}
+      m_SelectedIDs: e8ac0000
+      m_LastClickedID: 44264
+      m_ExpandedIDs: 72aefdff6a95ffff22deffff14fbffffdeac0000f4ac000016ae000020ae0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Player
-        m_OriginalName: Player
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -30810
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 4}
@@ -839,7 +839,7 @@ MonoBehaviour:
       displayed: 1
       id: SceneView/CamerasOverlay
       index: 6
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-254.0,"y":-184.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":true,"m_Floating":false,"m_FloatingSnapOffset":{"x":-254.0,"y":-184.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
       snapOffset: {x: -254, y: -184}
@@ -945,9 +945,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 21.315947, y: -23.527494, z: 27.077623}
+    m_Target: {x: 16.097075, y: -16.339487, z: 19.645824}
     speed: 2
-    m_Value: {x: 21.315947, y: -23.527494, z: 27.077623}
+    m_Value: {x: 16.097075, y: -16.339487, z: 19.645824}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -993,13 +993,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.3358577, y: -0.48618802, z: 0.20927286, w: -0.77924776}
+    m_Target: {x: -0.41497415, y: -0.3286887, z: 0.16365597, w: -0.83262646}
     speed: 2
-    m_Value: {x: -0.33550963, y: -0.48730734, z: 0.20975532, w: -0.7784393}
+    m_Value: {x: -0.41515902, y: -0.32739195, z: 0.16300969, w: -0.8329978}
   m_Size:
-    m_Target: 35.175327
+    m_Target: 27.658638
     speed: 2
-    m_Value: 35.175327
+    m_Value: 27.658638
   m_Ortho:
     m_Target: 0
     speed: 2
