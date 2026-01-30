@@ -10,7 +10,7 @@ public class PlayerLookUI : MonoBehaviour
     public bool UIVisable;
     private Transform HUDCanvas;
 
-    private void Awake()
+    private void Start()
     {
         CheckHealth();
         CheckLevel();

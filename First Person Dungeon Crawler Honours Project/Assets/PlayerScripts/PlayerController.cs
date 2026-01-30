@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
+        playerInput = GetComponent<PlayerInput>();S
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();

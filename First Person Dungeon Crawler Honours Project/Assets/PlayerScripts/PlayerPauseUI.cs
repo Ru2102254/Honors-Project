@@ -9,7 +9,7 @@ public class PlayerPauseUI : MonoBehaviour
     public TextMeshProUGUI LocationText;
     public TextMeshProUGUI MoneyText;
 
-    private void Awake()
+    private void Start()
     {
         CheckHealth();
         CheckLevel();
