@@ -5068,6 +5068,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2633211543547442290, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
+      propertyPath: randNumber
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4394981779422558941, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
       propertyPath: m_IsActive
       value: 1

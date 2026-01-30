@@ -191,6 +191,7 @@ public class BattleStstem : MonoBehaviour
                 dialogueText.text = "You Win";
                 SceneManager.UnloadSceneAsync("Battle");
                 DataCarryScript.instance.movementDisabled = false;
+                DataCarryScript.instance.inbattleData = false;
                 return;
             case BattleState.LOSE:
                 SceneManager.LoadScene("Game Over");

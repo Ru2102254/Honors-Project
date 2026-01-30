@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public Transform orientation;
     int encounterBarrier = 0;
     public int randNumber = 0;
+    bool inBattle = false;  
 
     PlayerInput playerInput;
     InputAction moveAction;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour {
     void Update()
     {
         movementDisabled = DataCarryScript.instance.movementDisabled;
+        inBattle = DataCarryScript.instance.inbattleData;
         moveDirection = moveAction.ReadValue<Vector2>();
         lookDirection = rotateAction.ReadValue<Vector2>();
     }
@@ -52,7 +54,8 @@ public class PlayerController : MonoBehaviour {
             MovePlayer();
             RotatePlayer();
         }
-        else {
+        if (movementDisabled && !inBattle)
+        {
             transform.position = DataCarryScript.instance.playerposition;
         }
     }
@@ -135,6 +138,7 @@ public class PlayerController : MonoBehaviour {
                 if (Random.Range(LowLimit, encounterNum) <= randNumber) { 
                     SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
                     DataCarryScript.instance.movementDisabled = true;
+                    DataCarryScript.instance.inbattleData = true;
                     encounterBarrier = 0;
                 }
                 break;

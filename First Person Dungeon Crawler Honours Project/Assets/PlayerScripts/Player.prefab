@@ -519,7 +519,7 @@ MonoBehaviour:
   HPText: {fileID: 3451581264743645416}
   LVLText: {fileID: 5201141956265986470}
   NameText: {fileID: 6577997470432559683}
-  LocationText: {fileID: 0}
+  LocationText: {fileID: 3937548738031994127}
   UIVisable: 0
 --- !u!114 &4335566220454306694
 MonoBehaviour:
@@ -928,6 +928,17 @@ GameObject:
 --- !u!114 &3451581264743645416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1582723191986344119, guid: 66ba30451c39dc74baf7852ad12c31d6, type: 3}
+  m_PrefabInstance: {fileID: 4183998556592279647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &3937548738031994127 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 915487688986023248, guid: 66ba30451c39dc74baf7852ad12c31d6, type: 3}
   m_PrefabInstance: {fileID: 4183998556592279647}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

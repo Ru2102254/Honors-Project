@@ -454,7 +454,6 @@
 "Assets/MenuScripts/PauseMenuScript.cs"
 "Assets/PlayerScripts/DataCarryScript.cs"
 "Assets/PlayerScripts/PlayerController.cs"
-"Assets/PlayerScripts/PlayerHUDScript.cs"
 "Assets/PlayerScripts/PlayerInventory.cs"
 "Assets/PlayerScripts/PlayerLookUI.cs"
 "Assets/PlayerScripts/PlayerPauseUI.cs"
