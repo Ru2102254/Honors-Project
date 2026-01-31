@@ -447,6 +447,7 @@
 "Assets/Interactions/PlayerInteractions.cs"
 "Assets/ItemAssets/ItemAssets.cs"
 "Assets/MenuScripts/GameOver.cs"
+"Assets/MenuScripts/Inventory/BattleInventory.cs"
 "Assets/MenuScripts/Inventory/InventoryScript.cs"
 "Assets/MenuScripts/Inventory/InventroyUI.cs"
 "Assets/MenuScripts/Inventory/ItemTypeScript.cs"

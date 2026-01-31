@@ -60,11 +60,7 @@ public class InventroyUI : MonoBehaviour
                 x = 0;
                 y++;
             }
-        
+ 
         }
-    
     }
-
-
-
 }
