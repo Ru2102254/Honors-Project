@@ -7,7 +7,7 @@ public class PlayerInventory : MonoBehaviour
     [SerializeField] private InventroyUI uiInventory;
 
     private InventoryScript inventory;
-    private void Awake()
+    private void Start()
     {
         inventory = new InventoryScript();
         uiInventory.SetInventory(inventory);

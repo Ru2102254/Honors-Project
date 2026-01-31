@@ -451,6 +451,7 @@
 "Assets/MenuScripts/Inventory/InventoryScript.cs"
 "Assets/MenuScripts/Inventory/InventroyUI.cs"
 "Assets/MenuScripts/Inventory/ItemTypeScript.cs"
+"Assets/MenuScripts/Inventory/UseItemScript.cs"
 "Assets/MenuScripts/MainMenu.cs"
 "Assets/MenuScripts/PauseMenuScript.cs"
 "Assets/PlayerScripts/DataCarryScript.cs"

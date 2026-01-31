@@ -44,12 +44,16 @@ public class BattleStstem : MonoBehaviour
 
     IEnumerator PlayerAttack()
     {
+
         //Inflict Damage
+
+        currState = BattleState.WAIT;
+
         bool isdead = enemyUnit.TakeDamage(DataCarryScript.instance.damageData);
         dialogueText.text = DataCarryScript.instance.nameData + " hit for " + DataCarryScript.instance.damageData;
         yield return new WaitForSeconds(2f);
 
-        currState = BattleState.WAIT;
+        
 
         dialogueText.text = "attack hit";
 
@@ -67,6 +71,7 @@ public class BattleStstem : MonoBehaviour
 
     public IEnumerator TalkStopFight()
     {
+        currState = BattleState.WAIT;
         int RandStopFight = 20;
         int RandStopFightLow = 1;
         int RandStopFightLimit= 100;
@@ -77,10 +82,16 @@ public class BattleStstem : MonoBehaviour
         if (Random.Range(RandStopFightLow, RandStopFightLimit) <= RandStopFight) {
             EndBattle();
         }
+        else
+        {
+            currState = BattleState.ENEMYPHASE;
+            StartCoroutine(EnemyPhase());
+        }
     }
 
     IEnumerator TalkItem()
     {
+        currState = BattleState.WAIT;
         int RandItem = 20;
         int RandItemLow = 1;
         int RandItemLimit = 100;
@@ -88,11 +99,19 @@ public class BattleStstem : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
         {
-           
+            dialogueText.text = "You got a ";
+            currState = BattleState.WIN;
+            EndBattle();
+        }
+        else
+        {
+            currState = BattleState.ENEMYPHASE;
+            StartCoroutine(EnemyPhase());
         }
     }
     IEnumerator TalkMoney()
     {
+        currState = BattleState.WAIT;
         int RandItem = 20;
         int RandItemLow = 1;
         int RandItemLimit = 100;
@@ -102,6 +121,37 @@ public class BattleStstem : MonoBehaviour
         if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
         {
             DataCarryScript.instance.CurrMoneyData += MoneyGain;
+            dialogueText.text = "You got " + MoneyGain + " money!";
+            yield return new WaitForSeconds(0.1f);
+            currState = BattleState.WIN;
+            EndBattle();
+        }
+        else
+        {
+            currState = BattleState.ENEMYPHASE;
+            StartCoroutine(EnemyPhase());
+        }
+    }
+
+    IEnumerator Abscond()
+    {
+        currState = BattleState.WAIT;
+        int RandItem = 20;
+        int RandItemLow = 1;
+        int RandItemLimit = 100;
+        dialogueText.text = "You want to run?";
+        yield return new WaitForSeconds(0.1f);
+        if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+        {;
+            dialogueText.text = "You got away safely!";
+            yield return new WaitForSeconds(0.1f);
+            currState = BattleState.WIN;
+            EndBattle();
+        }
+        else
+        {
+           currState = BattleState.ENEMYPHASE;
+           StartCoroutine(EnemyPhase());
         }
     }
 
@@ -133,21 +183,32 @@ public class BattleStstem : MonoBehaviour
                 StartCoroutine(TalkMoney());
                 break;
         }
-        StartCoroutine(PlayerAttack());
     }
 
-    public void OnItem()
+
+    public void UseHealingItem()
     {
         if (currState != BattleState.PLAYERPHASE) return;
 
-        StartCoroutine(PlayerAttack());
+        currState = BattleState.WAIT;
+
+        if (DataCarryScript.instance.currHPData < DataCarryScript.instance.maxHPData)
+        {
+            DataCarryScript.instance.currHPData += 10;
+            if (DataCarryScript.instance.currHPData > DataCarryScript.instance.maxHPData)
+            {
+                DataCarryScript.instance.currHPData = DataCarryScript.instance.maxHPData;
+            }
+        }
+        currState = BattleState.ENEMYPHASE;
+        StartCoroutine(EnemyPhase());
     }
 
     public void OnAbscond()
     {
         if (currState != BattleState.PLAYERPHASE) return;
 
-        StartCoroutine(PlayerAttack());
+        StartCoroutine(Abscond());
     }
 
     IEnumerator EnemyPhase()
