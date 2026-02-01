@@ -122,7 +122,7 @@ public class BattleStstem : MonoBehaviour
         {
             DataCarryScript.instance.CurrMoneyData += MoneyGain;
             dialogueText.text = "You got " + MoneyGain + " money!";
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1);
             currState = BattleState.WIN;
             EndBattle();
         }
@@ -140,11 +140,11 @@ public class BattleStstem : MonoBehaviour
         int RandItemLow = 1;
         int RandItemLimit = 100;
         dialogueText.text = "You want to run?";
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
         {;
             dialogueText.text = "You got away safely!";
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1f);
             currState = BattleState.WIN;
             EndBattle();
         }
@@ -199,6 +199,7 @@ public class BattleStstem : MonoBehaviour
             {
                 DataCarryScript.instance.currHPData = DataCarryScript.instance.maxHPData;
             }
+            playerHUD.setHP(DataCarryScript.instance.currHPData);
         }
         currState = BattleState.ENEMYPHASE;
         StartCoroutine(EnemyPhase());
