@@ -28,6 +28,16 @@ public class InteractObject : MonoBehaviour
         StartCoroutine("MoveToZeroCorutine", floorNum);
 
     }
+
+    public void Unlock()
+    {
+        if (DataCarryScript.instance.keysData > 0)
+        {
+            DataCarryScript.instance.keysData --;
+            Destroy(gameObject);
+        }
+    }
+
     IEnumerator MoveToZeroCorutine(int floorNum)
     {
         DataCarryScript.instance.movementDisabled = true;

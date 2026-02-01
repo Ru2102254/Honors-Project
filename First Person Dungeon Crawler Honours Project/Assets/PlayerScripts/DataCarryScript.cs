@@ -15,6 +15,7 @@ public class DataCarryScript : MonoBehaviour
     public Vector3 PlayerPositionData;
     public string LocationData;
     public bool InBattleData;
+    public int KeysData;
 
     public string nameData { get => NameData; set => NameData = value; }
     public int maxHPData { get => MaxHPData; set => MaxHPData = value; }
@@ -28,6 +29,7 @@ public class DataCarryScript : MonoBehaviour
     public Vector3 playerposition { get => PlayerPositionData; set => PlayerPositionData = value; }
     public string locationData { get => LocationData; set => LocationData = value; }
     public bool inbattleData { get => InBattleData; set => InBattleData = value; }
+    public int keysData { get => KeysData; set => KeysData = value; }
 
     public static DataCarryScript instance;
 

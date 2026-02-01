@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
     public int eLevel;
     public int eDamage;
     public int expDrop;
+    public int MoneyDrop;
 
     public bool TakeDamage(int dmg)
     {

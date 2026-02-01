@@ -231,3 +231,5 @@ MonoBehaviour:
   eCurrentHP: 15
   eLevel: 1
   eDamage: 5
+  expDrop: 5
+  MoneyDrop: 5

@@ -61,7 +61,7 @@ public class BattleStstem : MonoBehaviour
         if (isdead)
         {
             currState = BattleState.WIN;
-            EndBattle();
+            StartCoroutine(ValueGain());
         }
         else
         {
@@ -116,7 +116,7 @@ public class BattleStstem : MonoBehaviour
         int RandItem = 20;
         int RandItemLow = 1;
         int RandItemLimit = 100;
-        int MoneyGain = 20;
+        int MoneyGain = enemyUnit.MoneyDrop;
         dialogueText.text = "You want an item?";
         yield return new WaitForSeconds(0.1f);
         if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
@@ -243,6 +243,19 @@ public class BattleStstem : MonoBehaviour
             return false;
     }
 
+    IEnumerator ValueGain()
+    {
+        dialogueText.text = "You Win";
+        yield return new WaitForSeconds(1f);
+        int MoneyGain = enemyUnit.MoneyDrop;
+        int EXPGain = enemyUnit.expDrop;
+        dialogueText.text = "You got " + MoneyGain + " Money and " + EXPGain + " EXP";
+        yield return new WaitForSeconds(1f);
+        DataCarryScript.instance.currMoneydata += MoneyGain;
+        playerHUD.gainEXP(EXPGain);
+        EndBattle();
+    }
+
 
     void EndBattle()
     {
@@ -251,7 +264,6 @@ public class BattleStstem : MonoBehaviour
             case BattleState.WIN:
 
                 Destroy(enemyUnit.gameObject);
-                dialogueText.text = "You Win";
                 SceneManager.UnloadSceneAsync("Battle");
                 DataCarryScript.instance.movementDisabled = false;
                 DataCarryScript.instance.inbattleData = false;
