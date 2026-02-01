@@ -9,6 +9,7 @@ public enum BattleState { START, PLAYERPHASE, ENEMYPHASE, WIN, LOSE, WAIT }
 
 public class BattleStstem : MonoBehaviour
 {
+
     public BattleState currState;
     public GameObject enemyPrefab;
 

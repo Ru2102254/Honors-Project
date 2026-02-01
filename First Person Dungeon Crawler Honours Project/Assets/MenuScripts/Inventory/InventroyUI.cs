@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.UI;
-
 using TMPro;
 using UnityEditor.UI;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using static UnityEditor.Progress;
 
 public class InventroyUI : MonoBehaviour
 {
@@ -27,6 +27,26 @@ public class InventroyUI : MonoBehaviour
         RefreshInventoryItems();
     }
 
+    public void AddItemFunct(int itemTypeInt)
+    {
+        switch (itemTypeInt)
+        {
+            case 1:
+                inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
+                return;
+            case 2:
+                return;
+            case 3:
+                return;
+        }
+    }
+    public void RemoveItemFunct(GameObject ItemRemove)
+    {
+      Destroy(ItemRemove);
+        
+    }
+   
+
     private void RefreshInventoryItems() {
         int x = 0;
         int y = 0;
@@ -39,7 +59,6 @@ public class InventroyUI : MonoBehaviour
             itemSlotTransform.gameObject.SetActive(true);
 
             
-
 
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
             //Image image = itemSlotTransform.Find("image").GetComponent<Image>();

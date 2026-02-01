@@ -54,9 +54,9 @@ public class InventoryScript
                     itemInInventory = inventoryItem;
                 }
             }
-            if (itemInInventory != null)
+            if (itemInInventory != null && itemInInventory.amount <=0)
             {
-                ItemTypeList.Add(item);
+                ItemTypeList.Remove(itemInInventory);
             }
         }
         else
