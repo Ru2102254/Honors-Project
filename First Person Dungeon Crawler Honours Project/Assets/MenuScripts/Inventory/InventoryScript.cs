@@ -50,7 +50,7 @@ public class InventoryScript
             {
                 if (inventoryItem.itemType == item.itemType)
                 {
-                    inventoryItem.amount--;
+                    inventoryItem.amount -= item.amount;
                     itemInInventory = inventoryItem;
                 }
             }

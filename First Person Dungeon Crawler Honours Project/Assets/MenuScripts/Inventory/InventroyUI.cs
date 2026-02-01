@@ -24,30 +24,24 @@ public class InventroyUI : MonoBehaviour
     public void SetInventory(InventoryScript inventory)
     {
         this.inventory = inventory;
+        inventory.OnItemListChanged += InventoryChanged;
         RefreshInventoryItems();
     }
 
-    public void AddItemFunct(int itemTypeInt)
-    {
-        switch (itemTypeInt)
-        {
-            case 1:
-                inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
-                return;
-            case 2:
-                return;
-            case 3:
-                return;
-        }
+    private void InventoryChanged(object sender, System.EventArgs e)
+    { 
+        RefreshInventoryItems();
     }
-    public void RemoveItemFunct(GameObject ItemRemove)
-    {
-      Destroy(ItemRemove);
-        
-    }
-   
 
     private void RefreshInventoryItems() {
+
+        foreach (Transform child in ItemSlotContainer)
+        {
+            if (child == ItemSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
+
+
         int x = 0;
         int y = 0;
         float itemCellSize = 30f;
@@ -58,7 +52,6 @@ public class InventroyUI : MonoBehaviour
             RectTransform itemSlotTransform =  Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>(); 
             itemSlotTransform.gameObject.SetActive(true);
 
-            
 
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
             //Image image = itemSlotTransform.Find("image").GetComponent<Image>();
