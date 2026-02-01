@@ -6,10 +6,14 @@ using static UnityEditor.Progress;
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private InventroyUI uiInventory;
+    public GameObject PlayerGetter;
+    public InventoryScript MainInventory;
 
     private InventoryScript inventory;
     private void Start()
     {
+        PlayerGetter = GameObject.Find("Player");
+        MainInventory = PlayerGetter.GetComponent<PlayerInventory>().inventory;
         inventory = new InventoryScript();
         uiInventory.SetInventory(inventory);
     }
@@ -32,5 +36,10 @@ public class PlayerInventory : MonoBehaviour
 
         inventory.RemoveItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
 
+    }
+
+    public void RemoveFromPlayer()
+    {
+        MainInventory.RemoveItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
     }
 }
