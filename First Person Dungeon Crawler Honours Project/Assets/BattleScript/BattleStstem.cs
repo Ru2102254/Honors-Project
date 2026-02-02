@@ -12,6 +12,10 @@ public class BattleStstem : MonoBehaviour
 
     public BattleState currState;
     public GameObject enemyPrefab;
+    public GameObject Enemy2;
+
+
+    public GameObject Enemy_Boss;
 
     public Transform enemyBattleStation;
     public Transform playerBattleStation;
@@ -23,6 +27,10 @@ public class BattleStstem : MonoBehaviour
     public HUDScript playerHUD;
     public HUDScript enemyHUD;
 
+    public bool BossEnemy;
+
+    GameObject enemyEncountered;
+
     void Start()
     {
         DataCarryScript.instance.movementDisabled = true;
@@ -32,7 +40,26 @@ public class BattleStstem : MonoBehaviour
 
     IEnumerator BattleSetup()
     {
-        GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
+        if (!BossEnemy) {
+            int randLowLimit = 1;
+            int randHighLimit = 100;
+            int randEncounter = 50;
+            if (Random.Range(randLowLimit, randHighLimit) <= randEncounter)
+            {
+                enemyEncountered = enemyPrefab;
+            }
+            else
+            {
+                enemyEncountered = Enemy_Boss;
+            }
+        }
+        else
+        {
+            enemyEncountered = Enemy2;
+        }
+
+
+            GameObject enemyGO = Instantiate(enemyEncountered, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<EnemyScript>();
         dialogueText.text = "Accosted by " + enemyUnit.eName;
 

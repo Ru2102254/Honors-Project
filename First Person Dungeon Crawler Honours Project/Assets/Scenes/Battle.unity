@@ -1240,6 +1240,7 @@ MonoBehaviour:
   PlayerPositionData: {x: 0, y: 0, z: 0}
   LocationData: Floor 1
   InBattleData: 1
+  KeysData: 0
 --- !u!4 &496066729
 Transform:
   m_ObjectHideFlags: 0
@@ -3660,6 +3661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   uiInventory: {fileID: 362259702}
+  PlayerGetter: {fileID: 0}
 --- !u!4 &1318115740
 Transform:
   m_ObjectHideFlags: 0
@@ -3839,11 +3841,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleStstem
   currState: 0
   enemyPrefab: {fileID: 6058302479629960623, guid: ec92f0b6a439bf44daf7ae1716cdd266, type: 3}
+  Enemy2: {fileID: 6058302479629960623, guid: 4b230ba4617dc56449e8cf9cf7a11201, type: 3}
+  Enemy_Boss: {fileID: 6058302479629960623, guid: c868becb2e68fca4ca23f4d1401a3cfe, type: 3}
   enemyBattleStation: {fileID: 1826699404818662961, guid: 903374a999badb94585c63e8e55193ca, type: 3}
   playerBattleStation: {fileID: 7518036298803702321, guid: 4bec66175d66a2e44af2229488827839, type: 3}
   dialogueText: {fileID: 520224898}
   playerHUD: {fileID: 1632468492}
   enemyHUD: {fileID: 1972944901}
+  BossEnemy: 0
 --- !u!4 &1474875050
 Transform:
   m_ObjectHideFlags: 0
@@ -5425,6 +5430,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1513453092087209214, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7643216834287305060, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 554.33875

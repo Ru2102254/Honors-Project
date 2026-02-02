@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     public int currEXP;
     public int currMoney;
     int carryEXP;
-    int increaseToNext;
+    
 
     public static PlayerStats instance;
 
@@ -54,8 +54,12 @@ public class PlayerStats : MonoBehaviour
 
     void LevelUp(int extraEXP)
     {
+        int increaseToNext = 20;
+        int MaxHealthIncrease = 10;
         currEXP = extraEXP;
         Level += 1;
         expToNext += increaseToNext;
+        DataCarryScript.instance.MaxHPData += MaxHealthIncrease;
+        DataCarryScript.instance.currHPData = DataCarryScript.instance.MaxHPData;
     }
 }
