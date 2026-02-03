@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     public int CurrentHP;
     public int Level;
     public int Damage;
+    public int Defense;
     public int expToNext;
     public int currEXP;
     public int currMoney;
@@ -27,6 +28,7 @@ public class PlayerStats : MonoBehaviour
         expToNext = DataCarryScript.instance.expToNextData;
         currEXP = DataCarryScript.instance.currEXPData;
         currMoney = DataCarryScript.instance.currMoneydata;
+        Defense = DataCarryScript.instance.defenseData;
     }
     public bool TakeDamage(int dmg)
     {

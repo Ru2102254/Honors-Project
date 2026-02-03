@@ -16,6 +16,7 @@ public class DataCarryScript : MonoBehaviour
     public string LocationData;
     public bool InBattleData;
     public int KeysData;
+    public int DefenseData;
 
     public string nameData { get => NameData; set => NameData = value; }
     public int maxHPData { get => MaxHPData; set => MaxHPData = value; }
@@ -30,6 +31,7 @@ public class DataCarryScript : MonoBehaviour
     public string locationData { get => LocationData; set => LocationData = value; }
     public bool inbattleData { get => InBattleData; set => InBattleData = value; }
     public int keysData { get => KeysData; set => KeysData = value; }
+    public int defenseData { get => DefenseData; set => DefenseData = value; }
 
     public static DataCarryScript instance;
 

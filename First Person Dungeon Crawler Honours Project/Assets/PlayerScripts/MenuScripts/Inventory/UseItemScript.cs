@@ -1,24 +1,14 @@
 using UnityEngine;
 
 public class UseItemScript : MonoBehaviour
-{    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+{
+    public ItemStats UsedItem;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void UseHealingItem()
+    public void UseHealingItem(ItemStats UsedItem)
     {
         if (DataCarryScript.instance.currHPData < DataCarryScript.instance.maxHPData)
         {
-            DataCarryScript.instance.currHPData += 10;
+            DataCarryScript.instance.currHPData += UsedItem.Healing;
             if (DataCarryScript.instance.currHPData > DataCarryScript.instance.maxHPData)
             {
                 DataCarryScript.instance.currHPData = DataCarryScript.instance.maxHPData;

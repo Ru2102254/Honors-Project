@@ -9,7 +9,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject PlayerGetter;
     public InventoryScript MainInventory;
 
-    private InventoryScript inventory;
+    public InventoryScript inventory;
     private void Start()
     {
         PlayerGetter = GameObject.Find("Player");

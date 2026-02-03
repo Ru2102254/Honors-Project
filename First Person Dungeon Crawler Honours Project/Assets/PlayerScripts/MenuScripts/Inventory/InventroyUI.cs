@@ -52,15 +52,15 @@ public class InventroyUI : MonoBehaviour
         //int limitY = 4;
 
         foreach (ItemTypeScript item in inventory.GetItemList()) {
-            RectTransform itemSlotTransform =  Instantiate(EquipmentSlotTemplate, EquipmentPanel).GetComponent<RectTransform>(); 
+            RectTransform itemSlotTransform =  Instantiate(EquipmentSlotTemplate, EquipmentPanel).GetComponent<RectTransform>();
             itemSlotTransform.gameObject.SetActive(true);
-
 
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
             //Image image = itemSlotTransform.Find("image").GetComponent<Image>();
             //image.sprite = item.GetSprite();
-
-            ItemName.SetText(item.itemType.ToString());
+            TextMeshProUGUI itemName = itemSlotTransform.Find("Name").GetComponent<TextMeshProUGUI>();
+            itemName.SetText(item.itemType.ToString());
+            TextMeshProUGUI itemAmount = itemSlotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
 
             if (item.amount > 1) {
                 ItemAmount.SetText(item.amount.ToString());

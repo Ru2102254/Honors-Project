@@ -28,6 +28,11 @@ public class BattleInventory : MonoBehaviour
     }
 
     private void RefreshInventoryItems() {
+        foreach (Transform child in ItemSlotContainer)
+        {
+            if (child == ItemSlotTemplate) continue;
+            Destroy(child.gameObject);
+        }
         int x = 0;
         int y = 0;
         float itemCellSize = 30f;
