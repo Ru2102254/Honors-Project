@@ -6,22 +6,22 @@ using UnityEngine;
 public class InventoryScript
 {
     public event EventHandler OnItemListChanged;
-    private List<ItemTypeScript> ItemTypeList;
+    private List<ItemStats> ItemStatsList;
 
     public InventoryScript()
     {
-        ItemTypeList = new List<ItemTypeScript>();
+        ItemStatsList = new List<ItemStats>();
 
-        AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
-        Debug.Log(ItemTypeList.Count);
+        AddItem(ScriptableObject.CreateInstance<ItemStats>());
+        Debug.Log(ItemStatsList.Count);
     }
 
-    public void AddItem(ItemTypeScript item)
+    public void AddItem(ItemStats item)
     {
         if (item.IsStackable())
         {
             bool itemInInventory = false;
-            foreach (ItemTypeScript InventoryItem in ItemTypeList)
+            foreach (ItemStats InventoryItem in ItemStatsList)
             {
                 if (InventoryItem.itemType == item.itemType)
                 {
@@ -31,22 +31,22 @@ public class InventoryScript
             }
             if (!itemInInventory)
             {
-                ItemTypeList.Add(item);
+                ItemStatsList.Add(item);
             }
         }
         else
         {
-            ItemTypeList.Add(item);
+            ItemStatsList.Add(item);
         }
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
 
     }
 
-    public void RemoveItem(ItemTypeScript item)
+    public void RemoveItem(ItemStats item)
     {
         if (item.IsStackable()) {
-            ItemTypeScript itemInInventory = null;
-            foreach (ItemTypeScript inventoryItem in ItemTypeList)
+            ItemStats itemInInventory = null;
+            foreach (ItemStats inventoryItem in ItemStatsList)
             {
                 if (inventoryItem.itemType == item.itemType)
                 {
@@ -56,18 +56,18 @@ public class InventoryScript
             }
             if (itemInInventory != null && itemInInventory.amount <=0)
             {
-                ItemTypeList.Remove(itemInInventory);
+                ItemStatsList.Remove(itemInInventory);
             }
         }
         else
         {
-            ItemTypeList.Remove(item);
+            ItemStatsList.Remove(item);
         }
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public List<ItemTypeScript> GetItemList() {
-        return ItemTypeList;
+    public List<ItemStats> GetItemList() {
+        return ItemStatsList;
     
     }
 }

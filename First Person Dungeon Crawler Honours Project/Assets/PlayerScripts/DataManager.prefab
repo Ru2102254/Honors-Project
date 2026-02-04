@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7716181036671433219}
   - component: {fileID: 8346017480914412685}
+  - component: {fileID: 907814399769442636}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -51,3 +52,23 @@ MonoBehaviour:
   Damagedata: 10
   ExpToNextData: 10
   CurrEXPData: 0
+  CurrMoneyData: 0
+  MovementDisabled: 0
+  PlayerPositionData: {x: 0, y: 0, z: 0}
+  LocationData: 
+  InBattleData: 0
+  KeysData: 0
+  DefenseData: 0
+--- !u!114 &907814399769442636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160969290919002211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba68e008fdab8f49bb66f893353afdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSos
+  equipmentSO: []

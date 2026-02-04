@@ -10,6 +10,12 @@ public class ShoppingSystem : MonoBehaviour
     public TextMeshProUGUI ShoppingText;
 
     private InventoryScript inventory;
+
+
+    public ItemStats HealthItem;
+    public ItemStats WeaponItem;
+    public ItemStats ArmourItem;
+    public ItemStats AccessoryItem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,48 +33,47 @@ public class ShoppingSystem : MonoBehaviour
 
     public void Buyitem(int ItemType)
     {
-        int cost = 0;
         switch (ItemType) {
             case 0:
-                if (cost <= DataCarryScript.instance.currMoneydata)
+                if (WeaponItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
-                    DataCarryScript.instance.currMoneydata -= cost;
+                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
+                    DataCarryScript.instance.currMoneydata -= WeaponItem.ItemCost;
                 }
                 break;
             case 1:
-                if (cost <= DataCarryScript.instance.currMoneydata)
+                if (ArmourItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Armour, amount = 1 });
-                    DataCarryScript.instance.currMoneydata -= cost;
+                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Armour, amount = 1 });
+                    DataCarryScript.instance.currMoneydata -= ArmourItem.ItemCost;
                 }
                 break;
             case 2:
-                if (cost <= DataCarryScript.instance.currMoneydata)
+                if (AccessoryItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Accessory, amount = 1 });
-                    DataCarryScript.instance.currMoneydata -= cost;
+                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Accessory, amount = 1 });
+                    DataCarryScript.instance.currMoneydata -= AccessoryItem.ItemCost;
                 }
                 break;
             case 3:
-                if (cost <= DataCarryScript.instance.currMoneydata)
+                if (HealthItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.HealthItem, amount = 1 });
-                    DataCarryScript.instance.currMoneydata -= cost;
+                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.HealthItem, amount = 1 });
+                    DataCarryScript.instance.currMoneydata -= HealthItem.ItemCost;
                 }
                 break;
             case 4:
-                if (cost <= DataCarryScript.instance.currMoneydata)
+                if (HealthItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.HealthItemMore, amount = 1 });
-                    DataCarryScript.instance.currMoneydata -= cost;
+                    //inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.HealthItemMore, amount = 1 });
+                    DataCarryScript.instance.currMoneydata -= HealthItem.ItemCost;
                 }
                 break;
             case 5:
-                if (cost <= DataCarryScript.instance.currMoneydata)
+                if (HealthItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.HealthItemMost, amount = 1 });
-                    DataCarryScript.instance.currMoneydata -= cost;
+                    //inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.HealthItemMost, amount = 1 });
+                    DataCarryScript.instance.currMoneydata -= HealthItem.ItemCost;
                 }
                 break;
 

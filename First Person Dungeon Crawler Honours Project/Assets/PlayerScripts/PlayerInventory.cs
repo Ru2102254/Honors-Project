@@ -23,7 +23,7 @@ public class PlayerInventory : MonoBehaviour
         switch (itemTypeInt)
         {
             case 0:
-                inventory.AddItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
+                inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
                 return;
             case 2:
                 return;
@@ -34,12 +34,12 @@ public class PlayerInventory : MonoBehaviour
     public void RemoveItemFunct()
     {
 
-        inventory.RemoveItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
+        inventory.RemoveItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
 
     }
 
     public void RemoveFromPlayer()
     {
-        MainInventory.RemoveItem(new ItemTypeScript { itemType = ItemTypeScript.ItemType.Weapon, amount = 1 });
+        MainInventory.RemoveItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
     }
 }

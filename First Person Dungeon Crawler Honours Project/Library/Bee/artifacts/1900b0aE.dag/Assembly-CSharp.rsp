@@ -445,6 +445,7 @@
 "Assets/Interactions/InteractionsInLevel.cs"
 "Assets/Interactions/InteractObject.cs"
 "Assets/Interactions/PlayerInteractions.cs"
+"Assets/ItemAssets/EquipmenSOs.cs"
 "Assets/ItemAssets/ItemAssets.cs"
 "Assets/ItemAssets/ItemStats.cs"
 "Assets/PlayerScripts/DataCarryScript.cs"

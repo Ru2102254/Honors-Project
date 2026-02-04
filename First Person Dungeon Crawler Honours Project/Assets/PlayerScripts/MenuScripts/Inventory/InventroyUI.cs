@@ -13,15 +13,18 @@ public class InventroyUI : MonoBehaviour
     private Transform InventoryCanvas;
     private Transform ItemSlotContainer;
     private Transform ItemSlotTemplate;
-    private Transform EquipmentCanvas;
+    public Transform EquipmentCanvas;
     public RectTransform EquipmentHolder;
     public RectTransform EquipmentPanel;
     public RectTransform EquipmentSlotTemplate;
-    public TextMeshProUGUI ItemAmount;
-    public TextMeshProUGUI ItemName;
 
-    private void Awake()
+    private void Start()
     {
+    //    EquipmentCanvas = transform.Find("EquipmentCanvas");
+    //    EquipmentHolder = GameObject.Find("EquipmentHolder");
+    //    EquipmentPanel = GameObject.Find("EquipmentPanel");
+    //    EquipmentSlotTemplate = GameObject.Find("EquipmentSlotTemplate");
+
     }
 
     public void SetInventory(InventoryScript inventory)
@@ -38,7 +41,7 @@ public class InventroyUI : MonoBehaviour
 
     private void RefreshInventoryItems() {
 
-        foreach (Transform child in EquipmentPanel)
+        foreach (RectTransform child in EquipmentPanel)
         {
             if (child == EquipmentSlotTemplate) continue;
             Destroy(child.gameObject);
@@ -51,8 +54,8 @@ public class InventroyUI : MonoBehaviour
         int limitX = 4;
         //int limitY = 4;
 
-        foreach (ItemTypeScript item in inventory.GetItemList()) {
-            RectTransform itemSlotTransform =  Instantiate(EquipmentSlotTemplate, EquipmentPanel).GetComponent<RectTransform>();
+        foreach (ItemStats item in inventory.GetItemList()) {
+            RectTransform itemSlotTransform =  Instantiate(EquipmentSlotTemplate, EquipmentPanel.transform).GetComponent<RectTransform>();
             itemSlotTransform.gameObject.SetActive(true);
 
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
@@ -63,9 +66,9 @@ public class InventroyUI : MonoBehaviour
             TextMeshProUGUI itemAmount = itemSlotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
 
             if (item.amount > 1) {
-                ItemAmount.SetText(item.amount.ToString());
+                itemAmount.SetText(item.amount.ToString());
             } else {
-                ItemAmount.SetText("");
+                itemAmount.SetText("");
             
             }
                 x++;

@@ -3268,6 +3268,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 5047830869247501241}
+    - target: {fileID: 3658439504896361029, guid: d1c8f9d010439094ab060a912368bde8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4263929325879193565, guid: d1c8f9d010439094ab060a912368bde8, type: 3}
       propertyPath: m_Name
       value: InventoryMenu

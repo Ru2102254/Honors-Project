@@ -39,7 +39,7 @@ public class BattleInventory : MonoBehaviour
         int limitX = 4;
         //int limitY = 4;
 
-        foreach (ItemTypeScript item in inventory.GetItemList()) {
+        foreach (ItemStats item in inventory.GetItemList()) {
             RectTransform itemSlotTransform =  Instantiate(ItemSlotTemplate, ItemSlotContainer).GetComponent<RectTransform>(); 
             itemSlotTransform.gameObject.SetActive(true);
 

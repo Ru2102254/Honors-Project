@@ -551,7 +551,7 @@ MonoBehaviour:
   movementSpeed: 5
   movementRotationSpeed: 400
   orientation: {fileID: 4764604582233541395}
-  randNumber: 0
+  randNumber: 10
 --- !u!114 &9209030558221536348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: 0}
+  m_Actions: {fileID: -944628639613478452, guid: 2d836c079fbfca14c9cd1f5ffac093a7, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -642,8 +642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
   uiInventory: {fileID: 3919359933522914445}
   PlayerGetter: {fileID: 0}
-  AddedItem: {fileID: 0}
-  RemovedItem: {fileID: 0}
 --- !u!114 &321079771884087028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -902,6 +900,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1140360567641340321, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+      propertyPath: EquipmentPanel
+      value: 
+      objectReference: {fileID: 2523494196886618686}
+    - target: {fileID: 1140360567641340321, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+      propertyPath: EquipmentHolder
+      value: 
+      objectReference: {fileID: 990034853024598613}
+    - target: {fileID: 1140360567641340321, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+      propertyPath: EquipmentSlotTemplate
+      value: 
+      objectReference: {fileID: 6649640663911308970}
     - target: {fileID: 1287983289321847831, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 249.73853
@@ -1394,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7349670147784362886, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7580116575890765383, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1658,6 +1672,16 @@ PrefabInstance:
       addedObject: {fileID: 427393512827786691}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+--- !u!224 &990034853024598613 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3749894890266189689, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+  m_PrefabInstance: {fileID: 4158796066526319916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2523494196886618686 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1923673000464881426, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+  m_PrefabInstance: {fileID: 4158796066526319916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3919359933522914445 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1140360567641340321, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
@@ -1677,6 +1701,11 @@ RectTransform:
 --- !u!4 &6564459834294197947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7110805083750337431, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+  m_PrefabInstance: {fileID: 4158796066526319916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6649640663911308970 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7349670147784362886, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
   m_PrefabInstance: {fileID: 4158796066526319916}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4183998556592279647
