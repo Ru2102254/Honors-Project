@@ -9,6 +9,7 @@ public class InteractObject : MonoBehaviour
     public UnityEvent onInteract;
     PlayerController playerController;
     [SerializeField] GameObject player;
+
     private void Start()
     {
         playerController = player.GetComponent<PlayerController>();
@@ -36,6 +37,12 @@ public class InteractObject : MonoBehaviour
             DataCarryScript.instance.keysData --;
             Destroy(gameObject);
         }
+    }
+
+    public void ToShop() {
+        SceneManager.LoadScene("Shopping", LoadSceneMode.Additive);
+        DataCarryScript.instance.movementDisabled = true;
+        DataCarryScript.instance.inbattleData = true;
     }
 
     IEnumerator MoveToZeroCorutine(int floorNum)

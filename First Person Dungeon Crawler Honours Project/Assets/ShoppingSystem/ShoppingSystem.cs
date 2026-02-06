@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShoppingSystem : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ShoppingSystem : MonoBehaviour
     public GameObject PlayerGetter;
     public InventoryScript MainInventory;
     public TextMeshProUGUI ShoppingText;
+    public HUDScript playerHUD;
+
 
     private InventoryScript inventory;
 
@@ -23,6 +26,7 @@ public class ShoppingSystem : MonoBehaviour
         MainInventory = PlayerGetter.GetComponent<PlayerInventory>().inventory;
         inventory = new InventoryScript();
         uiInventory.SetInventory(inventory);
+        playerHUD.setHUD();
     }
 
     // Update is called once per frame
@@ -31,34 +35,42 @@ public class ShoppingSystem : MonoBehaviour
         
     }
 
+    public void LeaveShop()
+    {
+        SceneManager.UnloadSceneAsync("Shopping");
+        DataCarryScript.instance.movementDisabled = false;
+        DataCarryScript.instance.inbattleData = false;
+    }
+
+
     public void Buyitem(int ItemType)
     {
         switch (ItemType) {
             case 0:
                 if (WeaponItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
+                    inventory.AddItem(WeaponItem);
                     DataCarryScript.instance.currMoneydata -= WeaponItem.ItemCost;
                 }
                 break;
             case 1:
                 if (ArmourItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Armour, amount = 1 });
+                    inventory.AddItem(ArmourItem);
                     DataCarryScript.instance.currMoneydata -= ArmourItem.ItemCost;
                 }
                 break;
             case 2:
                 if (AccessoryItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Accessory, amount = 1 });
+                    inventory.AddItem(AccessoryItem);
                     DataCarryScript.instance.currMoneydata -= AccessoryItem.ItemCost;
                 }
                 break;
             case 3:
                 if (HealthItem.ItemCost <= DataCarryScript.instance.currMoneydata)
                 {
-                    inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.HealthItem, amount = 1 });
+                    inventory.AddItem(HealthItem);
                     DataCarryScript.instance.currMoneydata -= HealthItem.ItemCost;
                 }
                 break;

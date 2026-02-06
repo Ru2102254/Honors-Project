@@ -3780,7 +3780,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -4587,9 +4587,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventroyUI
   EquipmentCanvas: {fileID: 3251336450698949608}
-  EquipmentHolder: {fileID: 1452171669492171067}
-  EquipmentPanel: {fileID: 3674223499586991733}
-  EquipmentSlotTemplate: {fileID: 6751626829087960739}
+  EquipmentHolder: {fileID: 7147327917641307834}
+  EquipmentPanel: {fileID: 5586828799914827473}
+  EquipmentSlotTemplate: {fileID: 3658439504896361029}
 --- !u!1 &4444343227795762902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5884,7 +5884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8456727552753601315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6789,7 +6789,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3658439504896361029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6810,10 +6810,10 @@ RectTransform:
   - {fileID: 5963700111562419541}
   m_Father: {fileID: 5586828799914827473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6970736077047438898
 GameObject:
