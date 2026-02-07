@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemStats : ScriptableObject
 {
 
-    public enum ItemType { Weapon, Armour, Accessory, HealthItem }
+    public enum ItemType { Weapon, Head, Armour, Accessory, HealthItem }
 
     public ItemType itemType;
 
@@ -29,6 +29,7 @@ public class ItemStats : ScriptableObject
         {
             default:
             case ItemType.Weapon: return ItemAssets.Instance.weaponSprite;
+            case ItemType.Head: return ItemAssets.Instance.headSprite;
             case ItemType.Armour: return ItemAssets.Instance.armourSprite;
             case ItemType.Accessory: return ItemAssets.Instance.acessorySpreite;
             case ItemType.HealthItem: return ItemAssets.Instance.heathItemSprite;
@@ -41,6 +42,7 @@ public class ItemStats : ScriptableObject
         {
             default:
             case ItemType.Weapon: return true;
+            case ItemType.Head: return true;
             case ItemType.Armour: return true;
             case ItemType.Accessory: return true;
             case ItemType.HealthItem: return true;

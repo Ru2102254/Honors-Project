@@ -1,16 +1,38 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting;
 
 public class EquipingItems : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Image slotImage;
+    [SerializeField] private TMP_Text slotName;
+
+    [SerializeField] private ItemStats.ItemType itemType = new ItemStats.ItemType();
+
+    private Sprite itemSprite;
+    private string ItemName;
+
+    private bool SlotInUse;
+
+    public void EquipGear(ItemStats item)
     {
-        
+        //UpdateImage
+        this.itemSprite = item.GetSprite();
+        slotImage.sprite = this.itemSprite;
+        slotName.enabled = false;
+
+        this.ItemName = item.name;
+        SlotInUse = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveGear(ItemStats item)
     {
-        
+        //UpdateImage
+        Destroy(this.itemSprite);
+        slotName.enabled = false;
+
+        this.ItemName = "";
+        SlotInUse = false;
     }
 }

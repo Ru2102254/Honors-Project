@@ -10,6 +10,8 @@ public class PlayerInventory : MonoBehaviour
     public InventoryScript MainInventory;
 
     public InventoryScript inventory;
+
+    ItemStats Item;
     private void Start()
     {
         PlayerGetter = GameObject.Find("Player");
@@ -18,28 +20,20 @@ public class PlayerInventory : MonoBehaviour
         uiInventory.SetInventory(inventory);
     }
 
-    public void AddItemFunct(int itemTypeInt)
+    public void AddItemFunct(ItemStats Item)
     {
-        switch (itemTypeInt)
-        {
-            case 0:
-                inventory.AddItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
-                return;
-            case 2:
-                return;
-            case 3:
-                return;
-        }
+        inventory.AddItem(Item);
     }
     public void RemoveItemFunct()
     {
 
-        inventory.RemoveItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
+        inventory.RemoveItem(Item);
 
     }
 
     public void RemoveFromPlayer()
     {
-        MainInventory.RemoveItem(new ItemStats { itemType = ItemStats.ItemType.Weapon, amount = 1 });
+        MainInventory.RemoveItem(Item);
     }
+
 }
