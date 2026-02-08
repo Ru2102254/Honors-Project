@@ -15,6 +15,13 @@ public class EquipingItems : MonoBehaviour
 
     private bool SlotInUse;
 
+    private EquipmentSO equipmentSO;
+
+    private void Start()
+    {
+        equipmentSO = GameObject.Find("InventoryMenu").GetComponent<EquipmentSO>();
+    }
+
     public void EquipGear(ItemStats item)
     {
         //UpdateImage
@@ -24,6 +31,14 @@ public class EquipingItems : MonoBehaviour
 
         this.ItemName = item.name;
         SlotInUse = true;
+
+        for (int i = 0; i < equipmentSO.equipmentSO.Length; i++)
+        {
+            if (equipmentSO.equipmentSO[i].name == this.name)
+            {
+                equipmentSO.equipmentSO[i].EquipItem();
+            }
+        }
     }
 
     public void RemoveGear(ItemStats item)
@@ -34,5 +49,13 @@ public class EquipingItems : MonoBehaviour
 
         this.ItemName = "";
         SlotInUse = false;
+
+        for (int i = 0; i < equipmentSO.equipmentSO.Length; i++)
+        {
+            if (equipmentSO.equipmentSO[i].name == this.name)
+            {
+                equipmentSO.equipmentSO[i].UnEquipItem();
+            }
+        }
     }
 }

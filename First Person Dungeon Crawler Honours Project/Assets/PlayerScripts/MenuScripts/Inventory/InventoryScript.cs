@@ -8,6 +8,8 @@ public class InventoryScript
     public event EventHandler OnItemListChanged;
     private List<ItemStats> ItemStatsList;
 
+    public ItemSlot itemSlot;
+
     public InventoryScript()
     {
         ItemStatsList = new List<ItemStats>();

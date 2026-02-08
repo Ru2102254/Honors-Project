@@ -18,6 +18,9 @@ public class InventroyUI : MonoBehaviour
     public RectTransform EquipmentPanel;
     public RectTransform EquipmentSlotTemplate;
 
+    public ItemSlot itemSlot;
+
+
     private void Start()
     {
     //    EquipmentCanvas = transform.Find("EquipmentCanvas");
@@ -58,6 +61,8 @@ public class InventroyUI : MonoBehaviour
             RectTransform itemSlotTransform =  Instantiate(EquipmentSlotTemplate, EquipmentPanel.transform).GetComponent<RectTransform>();
             itemSlotTransform.gameObject.SetActive(true);
 
+            itemSlot = itemSlotTransform.GetComponent<ItemSlot>();
+            itemSlot.Item = item;
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
             //Image image = itemSlotTransform.Find("image").GetComponent<Image>();
             //image.sprite = item.GetSprite();

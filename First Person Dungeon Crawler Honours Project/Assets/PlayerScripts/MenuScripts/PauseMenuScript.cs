@@ -17,16 +17,9 @@ public class PauseMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !DataCarryScript.instance.inbattleData)
+        if (Input.GetKeyDown(KeyCode.Escape) && !DataCarryScript.instance.inbattleData && !PauseMenuCanvas.activeSelf)
         {
-            if (Paused)
-            {
-                Resume();
-            }
-            else {
-                Stop();
-            
-            }
+            Stop();
         }
     }
 

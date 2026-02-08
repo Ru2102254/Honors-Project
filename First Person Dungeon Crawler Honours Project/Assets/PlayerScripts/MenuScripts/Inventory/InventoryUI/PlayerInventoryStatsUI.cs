@@ -59,40 +59,43 @@ public class PlayerInventoryStatsUI : MonoBehaviour
         DefenseText.text = "" + DataCarryScript.instance.CurrMoneyData;
     }
 
-    public void Equip(ItemStats item)
+    public void Equip(GameObject ItemSlot)
     {
+
+        ItemStats item = ItemSlot.GetComponent<ItemStats>();
         switch (itemtype) {
             case ItemStats.ItemType.Weapon:
-                WeaponSlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                WeaponSlot.EquipGear(item);
                 break;
             case ItemStats.ItemType.Head:
-                HeadSlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                HeadSlot.EquipGear(item);
                 break;
             case ItemStats.ItemType.Armour:
-                ArmourSlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                ArmourSlot.EquipGear(item);
                 break;
             case ItemStats.ItemType.Accessory:
-                AccessorySlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                AccessorySlot.EquipGear(item);
                 break;
         }
         inventroyScript.RemoveItem(item);
     }
 
-    public void UnEquip(ItemStats item)
+    public void UnEquip(GameObject ItemSlot)
     {
+        ItemStats item = ItemSlot.GetComponent<ItemStats>();
         switch (itemtype)
         {
             case ItemStats.ItemType.Weapon:
-                WeaponSlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                WeaponSlot.RemoveGear(item);
                 break;
             case ItemStats.ItemType.Head:
-                HeadSlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                HeadSlot.RemoveGear(item);
                 break;
             case ItemStats.ItemType.Armour:
-                ArmourSlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                ArmourSlot.RemoveGear(item);
                 break;
             case ItemStats.ItemType.Accessory:
-                AccessorySlot.EquipGear(ItemSprite, ItemName, ItemDescription);
+                AccessorySlot.RemoveGear(item);
                 break;
         }
         inventroyScript.AddItem(item);
