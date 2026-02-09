@@ -10,7 +10,6 @@ public class PlayerInventoryStatsUI : MonoBehaviour
     public TextMeshProUGUI DefenseText;
 
     public Sprite ItemSprite;
-    public string ItemName, ItemDescription;
 
 
 
@@ -20,13 +19,15 @@ public class PlayerInventoryStatsUI : MonoBehaviour
     GameObject PlayerGetter;
     private InventoryScript inventroyScript;
 
+
+    public ItemSlot itemSlot; 
+    public TextMeshProUGUI previewNameText;
+    public TextMeshProUGUI previewAttackText;
+    public TextMeshProUGUI previewDefenseText;
+
     private void Start()
     {
-        CheckHealth();
-        CheckLevel();
-        CheckName();
-        CheckAttack();
-        CheckDefense();
+        CheckStats();
 
         PlayerGetter = GameObject.Find("Player");
         inventroyScript = PlayerGetter.GetComponent<PlayerInventory>().inventory;
@@ -37,32 +38,25 @@ public class PlayerInventoryStatsUI : MonoBehaviour
 
     }
 
-    void CheckHealth()
+    void CheckStats()
     {
         HPText.text = DataCarryScript.instance.currHPData + " / " + DataCarryScript.instance.maxHPData;
-    }
-    void CheckLevel()
-    {
         LVLText.text = "" + DataCarryScript.instance.levelData;
-    }
-    void CheckName()
-    {
         NameText.text = "" + DataCarryScript.instance.nameData;
+        AttackText.text = "" + DataCarryScript.instance.damageData;
+        DefenseText.text = "" + DataCarryScript.instance.CurrMoneyData;
     }
 
-    void CheckAttack()
+    void PreviewStats()
     {
-        AttackText.text = "" + DataCarryScript.instance.damageData;
-    }
-    void CheckDefense()
-    {
-        DefenseText.text = "" + DataCarryScript.instance.CurrMoneyData;
+        previewAttackText.text = "";
+        previewDefenseText.text = "";
     }
 
     public void Equip(GameObject ItemSlot)
     {
 
-        ItemStats item = ItemSlot.GetComponent<ItemStats>();
+        ItemStats item = ItemSlot.GetComponent<ItemSlot>().Item;
         switch (itemtype) {
             case ItemStats.ItemType.Weapon:
                 WeaponSlot.EquipGear(item);

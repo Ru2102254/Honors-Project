@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemStats : ScriptableObject
 {
 
-    public enum ItemType { Weapon, Head, Armour, Accessory, HealthItem }
+    public enum ItemType { Weapon, Head, Armour, Accessory, HealthItem, Generic }
 
     public ItemType itemType;
 

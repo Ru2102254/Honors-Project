@@ -58,4 +58,10 @@ public class EquipingItems : MonoBehaviour
             }
         }
     }
+
+
+    public void PreviewEquipment()
+    {
+
+    }
 }

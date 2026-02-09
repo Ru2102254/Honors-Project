@@ -4349,7 +4349,7 @@ MonoBehaviour:
   EquipmentHolder: {fileID: 7147327917641307834}
   EquipmentPanel: {fileID: 5586828799914827473}
   EquipmentSlotTemplate: {fileID: 3658439504896361029}
-  itemSlot: {fileID: 0}
+  itemSlot: {fileID: 2513907686555426706}
 --- !u!1 &4444343227795762902
 GameObject:
   m_ObjectHideFlags: 0
@@ -7944,13 +7944,15 @@ MonoBehaviour:
   AttackText: {fileID: 4869377920962604723}
   DefenseText: {fileID: 7358151776173169765}
   ItemSprite: {fileID: 0}
-  ItemName: 
-  ItemDescription: 
   WeaponSlot: {fileID: 0}
   HeadSlot: {fileID: 0}
   ArmourSlot: {fileID: 0}
   AccessorySlot: {fileID: 0}
   itemtype: 0
+  itemSlot: {fileID: 2513907686555426706}
+  previewNameText: {fileID: 8007345882482462853}
+  previewAttackText: {fileID: 442338097126793126}
+  previewDefenseText: {fileID: 4428825115764560644}
 --- !u!114 &7230453513466983934
 MonoBehaviour:
   m_ObjectHideFlags: 0
