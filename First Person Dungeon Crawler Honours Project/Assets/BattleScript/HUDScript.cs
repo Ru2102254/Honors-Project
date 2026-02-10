@@ -47,5 +47,7 @@ public class HUDScript : MonoBehaviour
         DataCarryScript.instance.currEXPData = extraEXP;
         DataCarryScript.instance.levelData += 1;
         DataCarryScript.instance.expToNextData += increaseToNext;
+        DataCarryScript.instance.damageData += 2;
+        DataCarryScript.instance.defenseData += 3;
     }
 }

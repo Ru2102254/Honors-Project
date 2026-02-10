@@ -13,8 +13,6 @@ public class InventoryScript
     public InventoryScript()
     {
         ItemStatsList = new List<ItemStats>();
-
-        AddItem(ScriptableObject.CreateInstance<ItemStats>());
         Debug.Log(ItemStatsList.Count);
     }
 

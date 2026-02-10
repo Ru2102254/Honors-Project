@@ -18,7 +18,7 @@ public class ItemTypeScript
             default:
             case ItemType.Weapon: return ItemAssets.Instance.weaponSprite;
             case ItemType.Armour: return ItemAssets.Instance.armourSprite;
-            case ItemType.Accessory: return ItemAssets.Instance.acessorySpreite;
+            case ItemType.Accessory: return ItemAssets.Instance.acessorySprite;
             case ItemType.HealthItem: return ItemAssets.Instance.heathItemSprite;
             case ItemType.HealthItemMore: return ItemAssets.Instance.heathItemSprite;
             case ItemType.HealthItemMost: return ItemAssets.Instance.heathItemSprite;

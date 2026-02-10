@@ -57,7 +57,7 @@ public class PlayerInventoryStatsUI : MonoBehaviour
     {
 
         ItemStats item = ItemSlot.GetComponent<ItemSlot>().Item;
-        switch (itemtype) {
+        switch (item.itemType) {
             case ItemStats.ItemType.Weapon:
                 WeaponSlot.EquipGear(item);
                 break;
@@ -71,7 +71,22 @@ public class PlayerInventoryStatsUI : MonoBehaviour
                 AccessorySlot.EquipGear(item);
                 break;
         }
+        StatsChangePlus(item);
         inventroyScript.RemoveItem(item);
+    }
+
+    public void StatsChangePlus(ItemStats item)
+    {
+        DataCarryScript.instance.damageData += item.Damage;
+        DataCarryScript.instance.defenseData += item.Defense;
+
+    }
+
+    public void StatsChangeMinus(ItemStats item)
+    {
+        DataCarryScript.instance.damageData -= item.Damage;
+        DataCarryScript.instance.defenseData -= item.Defense;
+
     }
 
     public void UnEquip(GameObject ItemSlot)

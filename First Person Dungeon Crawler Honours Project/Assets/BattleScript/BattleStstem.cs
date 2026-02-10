@@ -50,12 +50,12 @@ public class BattleStstem : MonoBehaviour
             }
             else
             {
-                enemyEncountered = Enemy_Boss;
+                enemyEncountered = Enemy2; 
             }
         }
         else
         {
-            enemyEncountered = Enemy2;
+            enemyEncountered = Enemy_Boss;
         }
 
 

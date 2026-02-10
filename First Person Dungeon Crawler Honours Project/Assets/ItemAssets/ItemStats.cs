@@ -8,19 +8,22 @@ public class ItemStats : ScriptableObject
 
     public ItemType itemType;
 
+    public Sprite ItemImage;
+
     public string ItemName;
     public int amount, ItemCost, Damage, Defense, Healing;
 
-    public void EquipItem()
+    public void EquipItem(ItemStats item)
     {
-        DataCarryScript.instance.damageData += Damage;
-        DataCarryScript.instance.DefenseData += Defense;
+       
+        DataCarryScript.instance.damageData += item.Damage;
+        DataCarryScript.instance.defenseData += item.Defense;
     }
 
-    public void UnEquipItem()
+    public void UnEquipItem(ItemStats item)
     {
-        DataCarryScript.instance.damageData -= Damage;
-        DataCarryScript.instance.DefenseData -= Defense;
+        DataCarryScript.instance.damageData -= item.Damage;
+        DataCarryScript.instance.DefenseData -= item.Defense;
     }
 
     public Sprite GetSprite()
@@ -31,7 +34,7 @@ public class ItemStats : ScriptableObject
             case ItemType.Weapon: return ItemAssets.Instance.weaponSprite;
             case ItemType.Head: return ItemAssets.Instance.headSprite;
             case ItemType.Armour: return ItemAssets.Instance.armourSprite;
-            case ItemType.Accessory: return ItemAssets.Instance.acessorySpreite;
+            case ItemType.Accessory: return ItemAssets.Instance.acessorySprite;
             case ItemType.HealthItem: return ItemAssets.Instance.heathItemSprite;
         }
     }

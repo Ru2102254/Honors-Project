@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd69506c686462489fa2a9c38f2a8ec, type: 3}
   m_Name: HealthPotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemStats
-  itemType: 3
+  itemType: 4
+  ItemImage: {fileID: 21300000, guid: b430d4bef5af418498296748ee26eb14, type: 3}
   ItemName: Potion
   amount: 1
   ItemCost: 10

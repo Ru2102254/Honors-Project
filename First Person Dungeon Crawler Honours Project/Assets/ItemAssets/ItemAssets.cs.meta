@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: b4951eb3ab5f5b840b4ce6576db68ff1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weaponSprite: {fileID: 21300000, guid: ad6ea17c3f4a2214481ddd63c96971ff, type: 3}
+  - headSprite: {fileID: 21300000, guid: 883ace0421b453744ae8af87ea94e666, type: 3}
+  - armourSprite: {fileID: 21300000, guid: a95d27f7e8aadfd46a41776968dc3d20, type: 3}
+  - acessorySpreite: {fileID: 21300000, guid: ea9b5d095d92db64fbca98843e224aab, type: 3}
+  - heathItemSprite: {fileID: 21300000, guid: b430d4bef5af418498296748ee26eb14, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

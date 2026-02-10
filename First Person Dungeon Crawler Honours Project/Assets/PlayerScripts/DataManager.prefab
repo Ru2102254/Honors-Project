@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7716181036671433219}
   - component: {fileID: 8346017480914412685}
-  - component: {fileID: 907814399769442636}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -59,21 +58,3 @@ MonoBehaviour:
   InBattleData: 0
   KeysData: 0
   DefenseData: 0
---- !u!114 &907814399769442636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4160969290919002211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dba68e008fdab8f49bb66f893353afdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSos
-  equipmentSO:
-  - {fileID: 11400000, guid: d4c0ebd3aed538945a3609727da1295a, type: 2}
-  - {fileID: 11400000, guid: dca8abd736e5248419aaae8d7046ef03, type: 2}
-  - {fileID: 11400000, guid: dbb3b5c21f998c84284fb271a2469483, type: 2}
-  - {fileID: 11400000, guid: adf19477e4b79dd4c987aa098921f51b, type: 2}
-  - {fileID: 11400000, guid: 234e42641dc916a4ba409a0dad46273f, type: 2}

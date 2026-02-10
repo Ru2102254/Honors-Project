@@ -1671,7 +1671,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 124426466788169597, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
       insertIndex: -1
       addedObject: {fileID: 427393512827786691}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7788589038126376478, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1171609340387104255}
   m_SourcePrefab: {fileID: 100100000, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
 --- !u!224 &990034853024598613 stripped
 RectTransform:
@@ -1688,7 +1691,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1140360567641340321, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
   m_PrefabInstance: {fileID: 4158796066526319916}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6170391678492472114}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40423680cbe09364b8d53cfc217cf382, type: 3}
@@ -1699,6 +1702,28 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 124426466788169597, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
   m_PrefabInstance: {fileID: 4158796066526319916}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6170391678492472114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7788589038126376478, guid: f4b8b38e7c4d3234887418f643173940, type: 3}
+  m_PrefabInstance: {fileID: 4158796066526319916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1171609340387104255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170391678492472114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4951eb3ab5f5b840b4ce6576db68ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemAssets
+  weaponSprite: {fileID: 21300000, guid: ad6ea17c3f4a2214481ddd63c96971ff, type: 3}
+  headSprite: {fileID: 21300000, guid: 883ace0421b453744ae8af87ea94e666, type: 3}
+  armourSprite: {fileID: 21300000, guid: a95d27f7e8aadfd46a41776968dc3d20, type: 3}
+  acessorySprite: {fileID: 21300000, guid: ea9b5d095d92db64fbca98843e224aab, type: 3}
+  heathItemSprite: {fileID: 21300000, guid: b430d4bef5af418498296748ee26eb14, type: 3}
 --- !u!4 &6564459834294197947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7110805083750337431, guid: f4b8b38e7c4d3234887418f643173940, type: 3}

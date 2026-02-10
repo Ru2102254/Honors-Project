@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using static UnityEditor.Progress;
+using Image = UnityEngine.UI.Image;
 
 public class InventroyUI : MonoBehaviour
 {
@@ -64,8 +65,8 @@ public class InventroyUI : MonoBehaviour
             itemSlot = itemSlotTransform.GetComponent<ItemSlot>();
             itemSlot.Item = item;
             itemSlotTransform.anchoredPosition = new Vector2(x * itemCellSize, y * itemCellSize);
-            //Image image = itemSlotTransform.Find("image").GetComponent<Image>();
-            //image.sprite = item.GetSprite();
+            Image ImageSlot = itemSlotTransform.Find("Image").GetComponent<Image>();
+            ImageSlot.sprite = item.ItemImage;
             TextMeshProUGUI itemName = itemSlotTransform.Find("Name").GetComponent<TextMeshProUGUI>();
             itemName.SetText(item.itemType.ToString());
             TextMeshProUGUI itemAmount = itemSlotTransform.Find("Amount").GetComponent<TextMeshProUGUI>();
