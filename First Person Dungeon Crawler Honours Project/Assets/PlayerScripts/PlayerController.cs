@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour {
     public Transform orientation;
     int encounterBarrier = 0;
     public int randNumber = 0;
-    bool inBattle = false;  
+    bool inBattle = false;
+
+    public float encounterTime;
 
     PlayerInput playerInput;
     InputAction moveAction;
@@ -71,10 +73,11 @@ public class PlayerController : MonoBehaviour {
         float speed = movementSpeed;
 
         characterController.Move(directMove * speed * Time.deltaTime);
-        
+
         if (directMove.x > 0 || directMove.y > 0)
         {
-            TriggerEncounter();
+            //TriggerEncounter();
+            StartCoroutine(EncounterWait());
         }
 
         //Snapping Movement
@@ -121,21 +124,24 @@ public class PlayerController : MonoBehaviour {
     void TriggerEncounter()
     {
         int LowLimit = 1;
-        int encounterNum = 255;
-        
+        int encounterNum = 500;
 
         switch (encounterBarrier)
         {
             case 0:
-                if (Random.Range(LowLimit, encounterNum) <= randNumber) { encounterBarrier++; }
+                if (Random.Range(LowLimit, encounterNum) <= randNumber) {
+                    encounterBarrier++;
+                }
                 Debug.Log(encounterBarrier);
                 break;
             case 1:
-                if (Random.Range(LowLimit, encounterNum) <= randNumber) { encounterBarrier++; }
+                if (Random.Range(LowLimit, encounterNum) <= randNumber) {
+                    encounterBarrier++; 
+                }
                 Debug.Log(encounterBarrier);
                 break;
             case 2:
-                if (Random.Range(LowLimit, encounterNum) <= randNumber) { 
+                if (Random.Range(LowLimit, encounterNum) <= randNumber) {
                     SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
                     DataCarryScript.instance.movementDisabled = true;
                     DataCarryScript.instance.inbattleData = true;
@@ -144,6 +150,17 @@ public class PlayerController : MonoBehaviour {
                 break;
 
         }
+    }
+
+    IEnumerator EncounterWait()
+    {
+        float EncounterTime = 1f;
+        float RemainingTime = 0;
+        while (RemainingTime > 0) {
+            yield return new WaitForSeconds(EncounterTime);
+            RemainingTime -= encounterTime;
+        }
+        TriggerEncounter();
     }
 
 
