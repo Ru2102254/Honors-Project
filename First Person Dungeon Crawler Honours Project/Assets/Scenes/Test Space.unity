@@ -2129,16 +2129,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367626924}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!224 &388401164 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6649640663911308970, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
-  m_PrefabInstance: {fileID: 1051765756}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &395299983 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 990034853024598613, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
-  m_PrefabInstance: {fileID: 1051765756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &400859183
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,11 +4876,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991721713}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!224 &1025210084 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2523494196886618686, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
-  m_PrefabInstance: {fileID: 1051765756}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1040430615
 GameObject:
   m_ObjectHideFlags: 0
@@ -5480,18 +5465,6 @@ PrefabInstance:
       propertyPath: TXTItemAmount
       value: 
       objectReference: {fileID: 971621409}
-    - target: {fileID: 3919359933522914445, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
-      propertyPath: EquipmentPanel
-      value: 
-      objectReference: {fileID: 1025210084}
-    - target: {fileID: 3919359933522914445, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
-      propertyPath: EquipmentHolder
-      value: 
-      objectReference: {fileID: 395299983}
-    - target: {fileID: 3919359933522914445, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
-      propertyPath: EquipmentSlotTemplate
-      value: 
-      objectReference: {fileID: 388401164}
     - target: {fileID: 4038901803881267793, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

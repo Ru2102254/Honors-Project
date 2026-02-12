@@ -76,6 +76,7 @@ public class EquipingItems : MonoBehaviour
                 equipmentSO.equipmentSO[i].UnEquipItem(item);
             }
         }
+        
     }
 
 

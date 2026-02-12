@@ -44,7 +44,7 @@ public class PlayerInventoryStatsUI : MonoBehaviour
         LVLText.text = "" + DataCarryScript.instance.levelData;
         NameText.text = "" + DataCarryScript.instance.nameData;
         AttackText.text = "" + DataCarryScript.instance.damageData;
-        DefenseText.text = "" + DataCarryScript.instance.CurrMoneyData;
+        DefenseText.text = "" + DataCarryScript.instance.defenseData;
     }
 
     void PreviewStats()

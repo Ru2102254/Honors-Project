@@ -11,11 +11,6 @@ using Image = UnityEngine.UI.Image;
 public class InventroyUI : MonoBehaviour
 {
     private InventoryScript inventory;
-    private Transform InventoryCanvas;
-    private Transform ItemSlotContainer;
-    private Transform ItemSlotTemplate;
-    public Transform EquipmentCanvas;
-    public RectTransform EquipmentHolder;
     public RectTransform EquipmentPanel;
     public RectTransform EquipmentSlotTemplate;
 

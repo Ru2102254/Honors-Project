@@ -552,6 +552,7 @@ MonoBehaviour:
   movementRotationSpeed: 400
   orientation: {fileID: 4764604582233541395}
   randNumber: 10
+  encounterTime: 0
 --- !u!114 &9209030558221536348
 MonoBehaviour:
   m_ObjectHideFlags: 0
