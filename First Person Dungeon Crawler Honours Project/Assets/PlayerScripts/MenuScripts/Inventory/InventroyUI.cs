@@ -70,7 +70,6 @@ public class InventroyUI : MonoBehaviour
                 itemAmount.SetText(item.amount.ToString());
             } else {
                 itemAmount.SetText("");
-            
             }
                 x++;
             if (x > limitX)

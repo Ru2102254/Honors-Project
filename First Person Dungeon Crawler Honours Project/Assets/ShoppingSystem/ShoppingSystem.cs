@@ -37,8 +37,6 @@ public class ShoppingSystem : MonoBehaviour
         ItemStats item = ItemSlot.GetComponent<ItemSlot>().Item;
         if (item.ItemCost <= DataCarryScript.instance.currMoneydata)
         {
-
-            MainInventory.AddItem(item);
             inventory.AddItem(item);
             DataCarryScript.instance.currMoneydata -= item.ItemCost;
         }

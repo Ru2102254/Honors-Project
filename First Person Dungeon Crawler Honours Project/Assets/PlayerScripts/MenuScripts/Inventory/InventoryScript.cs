@@ -25,7 +25,7 @@ public class InventoryScript
             {
                 if (InventoryItem.itemType == item.itemType)
                 {
-                    InventoryItem.amount += item.amount;
+                    InventoryItem.amount += 1;
                     itemInInventory = true;
                 }
             }
@@ -50,7 +50,7 @@ public class InventoryScript
             {
                 if (inventoryItem.itemType == item.itemType)
                 {
-                    inventoryItem.amount -= item.amount;
+                    inventoryItem.amount -= 1;
                     itemInInventory = inventoryItem;
                 }
             }

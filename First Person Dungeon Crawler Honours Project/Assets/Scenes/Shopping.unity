@@ -1087,6 +1087,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &541594145 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3919359933522914445, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
+  m_PrefabInstance: {fileID: 1256574501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40423680cbe09364b8d53cfc217cf382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventroyUI
 --- !u!1 &551102143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffdac7a5a12d0843a12db01dba52ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
-  uiInventory: {fileID: 1152983018}
+  uiInventory: {fileID: 541594145}
   PlayerGetter: {fileID: 0}
 --- !u!4 &551102145
 Transform:
@@ -4021,7 +4032,7 @@ GameObject:
   - component: {fileID: 1183978499}
   - component: {fileID: 1183978498}
   m_Layer: 5
-  m_Name: Item
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4059,7 +4070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.10849059, b: 0.10849059, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8269,7 +8280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.46666667}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
