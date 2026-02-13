@@ -22,7 +22,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItemFunct(ItemStats Item)
     {
-        inventory.AddItem(Item);
+        MainInventory.AddItem(Item);
     }
     public void RemoveItemFunct()
     {

@@ -38,6 +38,7 @@ public class ShoppingSystem : MonoBehaviour
         if (item.ItemCost <= DataCarryScript.instance.currMoneydata)
         {
             inventory.AddItem(item);
+            MainInventory.AddItem(item);
             DataCarryScript.instance.currMoneydata -= item.ItemCost;
         }
 
