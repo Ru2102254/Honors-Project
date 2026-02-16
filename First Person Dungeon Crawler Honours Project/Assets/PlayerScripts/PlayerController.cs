@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     public bool smoothMovement = true;
     public bool freeMovement = true;
     public float movementSpeed = 1f;
-    public float movementRotationSpeed = 400f;
+    public float movementRotationSpeed = 300f;
     private CharacterController characterController;
     public Transform orientation;
     int encounterBarrier = 0;
@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour {
 
         Quaternion deltaRotation = Quaternion.Euler(rotationAmountX, rotationAmountY, 0);
         transform.rotation *= deltaRotation;
-        orientation.rotation *= Quaternion.Euler(0, rotationAmountY, 0);
+        orientation.rotation *= Quaternion.Euler(0, -rotationAmountY, 0);
 
         //NonFree Rotate
         //transform.rotation = Quaternion.Euler(0, roationAmount, 0);

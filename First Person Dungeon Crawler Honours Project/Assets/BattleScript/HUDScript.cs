@@ -9,6 +9,7 @@ public class HUDScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TextMeshProUGUI playerName;
     public TextMeshProUGUI playerLevel;
+    public Image playerFace;
     public Slider hpSlider;
     int carryEXP;
     int increaseToNext = 100;
@@ -16,6 +17,7 @@ public class HUDScript : MonoBehaviour
 
     public void setHUD()
     {
+
         playerName.text = DataCarryScript.instance.nameData;
         playerLevel.text = "Lvl " + DataCarryScript.instance.levelData;
         hpSlider.maxValue = DataCarryScript.instance.maxHPData;

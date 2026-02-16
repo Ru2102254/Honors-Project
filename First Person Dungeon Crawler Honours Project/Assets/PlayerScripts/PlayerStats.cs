@@ -14,7 +14,8 @@ public class PlayerStats : MonoBehaviour
     public int currEXP;
     public int currMoney;
     int carryEXP;
-    
+
+    public Sprite PlayerFace;
 
     public static PlayerStats instance;
 

@@ -11,37 +11,19 @@ public class PlayerPauseUI : MonoBehaviour
 
     private void Start()
     {
-        CheckHealth();
-        CheckLevel();
-        CheckName();
-        CheckLocation();
-        CheckMoney();
+        CheckStats();
     }
 
     private void Update()
     {
-
+        CheckStats();
     }
-
-    void CheckHealth()
+    void CheckStats()
     {
         HPText.text = DataCarryScript.instance.currHPData + " / " + DataCarryScript.instance.maxHPData;
-    }
-    void CheckLevel()
-    {
-        LVLText.text = "Level: " + DataCarryScript.instance.levelData;
-    }
-    void CheckName()
-    {
+        LVLText.text = "" + DataCarryScript.instance.levelData;
         NameText.text = "" + DataCarryScript.instance.nameData;
-    }
-
-    void CheckLocation()
-    {
         LocationText.text = "" + DataCarryScript.instance.locationData;
-    }
-    void CheckMoney()
-    {
         MoneyText.text = "Money: " + DataCarryScript.instance.CurrMoneyData;
     }
 }

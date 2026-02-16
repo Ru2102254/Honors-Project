@@ -7,15 +7,13 @@ public class PlayerLookUI : MonoBehaviour
     public TextMeshProUGUI LVLText;
     public TextMeshProUGUI NameText;
     public TextMeshProUGUI LocationText;
+    public TextMeshProUGUI KeysText;
     public bool UIVisable;
     private Transform HUDCanvas;
 
     private void Start()
     {
-        CheckHealth();
-        CheckLevel();
-        CheckName();
-        CheckLocation();
+        CheckStats();
         HUDCanvas = transform.Find("PlayerHUD/PlayerHUDCanvas");
         if (UIVisable)
         {
@@ -25,24 +23,16 @@ public class PlayerLookUI : MonoBehaviour
 
     private void Update()
     {
-        
+        CheckStats();
     }
 
-    void CheckHealth()
+    void CheckStats()
     {
         HPText.text = DataCarryScript.instance.currHPData + " / " + DataCarryScript.instance.maxHPData;
-    }
-    void CheckLevel()
-    {
         LVLText.text = "" + DataCarryScript.instance.levelData;
-    }
-    void CheckName()
-    {
         NameText.text = "" + DataCarryScript.instance.nameData;
-    }
-
-    void CheckLocation() {
         LocationText.text = "" + DataCarryScript.instance.locationData;
+        KeysText.text = "" + DataCarryScript.instance.keysData;
     }
 
 

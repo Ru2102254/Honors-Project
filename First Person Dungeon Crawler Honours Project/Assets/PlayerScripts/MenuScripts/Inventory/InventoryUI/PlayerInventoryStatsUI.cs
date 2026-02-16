@@ -35,7 +35,7 @@ public class PlayerInventoryStatsUI : MonoBehaviour
 
     private void Update()
     {
-
+        CheckStats();
     }
 
     void CheckStats()
