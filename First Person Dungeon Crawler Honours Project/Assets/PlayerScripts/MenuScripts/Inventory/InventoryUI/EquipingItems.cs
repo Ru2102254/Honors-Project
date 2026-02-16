@@ -74,6 +74,7 @@ public class EquipingItems : MonoBehaviour
             if (equipmentSO.equipmentSO[i].name == this.name)
             {
                 equipmentSO.equipmentSO[i].UnEquipItem(item);
+                UnEquipItem(item);
             }
         }
         
