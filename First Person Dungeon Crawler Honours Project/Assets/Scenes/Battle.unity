@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 347734846}
   - component: {fileID: 347734845}
   m_Layer: 5
-  m_Name: Item
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,11 +910,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40423680cbe09364b8d53cfc217cf382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventroyUI
-  EquipmentCanvas: {fileID: 0}
-  EquipmentHolder: {fileID: 1978062236}
   EquipmentPanel: {fileID: 2129146408}
   EquipmentSlotTemplate: {fileID: 801771393}
-  itemSlot: {fileID: 0}
+  itemSlot: {fileID: 801771394}
 --- !u!224 &362259704
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3638,6 +3636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1318115740}
   - component: {fileID: 1318115739}
+  - component: {fileID: 1318115741}
   m_Layer: 0
   m_Name: PlayerInventoryHolder
   m_TagString: Untagged
@@ -3674,6 +3673,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318115741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318115738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba68e008fdab8f49bb66f893353afdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSO
+  equipmentSO:
+  - {fileID: 11400000, guid: dbb3b5c21f998c84284fb271a2469483, type: 2}
+  - {fileID: 11400000, guid: adf19477e4b79dd4c987aa098921f51b, type: 2}
+  - {fileID: 11400000, guid: d4c0ebd3aed538945a3609727da1295a, type: 2}
+  - {fileID: 11400000, guid: 234e42641dc916a4ba409a0dad46273f, type: 2}
+  - {fileID: 11400000, guid: dca8abd736e5248419aaae8d7046ef03, type: 2}
+  - {fileID: 11400000, guid: 0ef6b47340a4887489dc8d08b1ae7f7a, type: 2}
 --- !u!1 &1428113952
 GameObject:
   m_ObjectHideFlags: 0

@@ -1097,6 +1097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551102145}
   - component: {fileID: 551102144}
+  - component: {fileID: 551102146}
   m_Layer: 0
   m_Name: PlayerInventoryHolder
   m_TagString: Untagged
@@ -1133,6 +1134,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &551102146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551102143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba68e008fdab8f49bb66f893353afdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSO
+  equipmentSO:
+  - {fileID: 11400000, guid: 234e42641dc916a4ba409a0dad46273f, type: 2}
+  - {fileID: 11400000, guid: adf19477e4b79dd4c987aa098921f51b, type: 2}
+  - {fileID: 11400000, guid: dbb3b5c21f998c84284fb271a2469483, type: 2}
+  - {fileID: 11400000, guid: d4c0ebd3aed538945a3609727da1295a, type: 2}
+  - {fileID: 11400000, guid: dca8abd736e5248419aaae8d7046ef03, type: 2}
+  - {fileID: 11400000, guid: 0ef6b47340a4887489dc8d08b1ae7f7a, type: 2}
 --- !u!1 &552681577
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,6 +2797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992525101}
   - component: {fileID: 992525102}
+  - component: {fileID: 992525103}
   m_Layer: 0
   m_Name: ShoppingSystem
   m_TagString: Untagged
@@ -2815,6 +2836,25 @@ MonoBehaviour:
   PlayerGetter: {fileID: 0}
   ShoppingText: {fileID: 840047783}
   playerHUD: {fileID: 1967112285}
+--- !u!114 &992525103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992525100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dba68e008fdab8f49bb66f893353afdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EquipmentSO
+  equipmentSO:
+  - {fileID: 11400000, guid: 234e42641dc916a4ba409a0dad46273f, type: 2}
+  - {fileID: 11400000, guid: adf19477e4b79dd4c987aa098921f51b, type: 2}
+  - {fileID: 11400000, guid: dbb3b5c21f998c84284fb271a2469483, type: 2}
+  - {fileID: 11400000, guid: d4c0ebd3aed538945a3609727da1295a, type: 2}
+  - {fileID: 11400000, guid: dca8abd736e5248419aaae8d7046ef03, type: 2}
+  - {fileID: 11400000, guid: 0ef6b47340a4887489dc8d08b1ae7f7a, type: 2}
 --- !u!1 &1004509428
 GameObject:
   m_ObjectHideFlags: 0
