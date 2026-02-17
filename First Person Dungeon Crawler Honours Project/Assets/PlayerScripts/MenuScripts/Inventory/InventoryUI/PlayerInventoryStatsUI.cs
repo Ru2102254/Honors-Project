@@ -1,5 +1,7 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventoryStatsUI : MonoBehaviour
 {
@@ -11,7 +13,10 @@ public class PlayerInventoryStatsUI : MonoBehaviour
 
     public Sprite ItemSprite;
 
-
+    public Button UnequipWeaponBTN;
+    public Button UnequipHeadBTN;
+    public Button UnequipArmourBTN;
+    public Button UnequipAccessoryBTN;
 
     [SerializeField] private EquipingItems WeaponSlot, HeadSlot, ArmourSlot, AccessorySlot;
     public ItemStats.ItemType itemtype;
@@ -60,15 +65,19 @@ public class PlayerInventoryStatsUI : MonoBehaviour
         switch (item.itemType) {
             case ItemStats.ItemType.Weapon:
                 WeaponSlot.EquipGear(item);
+                UnequipWeaponBTN.gameObject.SetActive(true);
                 break;
             case ItemStats.ItemType.Head:
                 HeadSlot.EquipGear(item);
+                UnequipHeadBTN.gameObject.SetActive(true);
                 break;
             case ItemStats.ItemType.Armour:
                 ArmourSlot.EquipGear(item);
+                UnequipArmourBTN.gameObject.SetActive(true);
                 break;
             case ItemStats.ItemType.Accessory:
                 AccessorySlot.EquipGear(item);
+                UnequipAccessoryBTN.gameObject.SetActive(true);
                 break;
         }
         StatsChangePlus(item);
@@ -91,7 +100,7 @@ public class PlayerInventoryStatsUI : MonoBehaviour
 
     public void UnEquip(GameObject ItemSlot)
     {
-        ItemStats item = ItemSlot.GetComponent<ItemStats>();
+        ItemStats item = ItemSlot.GetComponent<ItemSlot>().Item;
         switch (itemtype)
         {
             case ItemStats.ItemType.Weapon:
@@ -107,7 +116,11 @@ public class PlayerInventoryStatsUI : MonoBehaviour
                 AccessorySlot.RemoveGear(item);
                 break;
         }
+        StatsChangeMinus(item);
         inventroyScript.AddItem(item);
+        item.amount += 1;
+        
+
     }
 
 

@@ -29,20 +29,26 @@ public class EquipingItems : MonoBehaviour
     public void EquipGear(ItemStats item)
     {
         //UpdateImage
-        this.itemSprite = item.ItemImage;
-        slotImage.sprite = this.itemSprite;
+        if (!SlotInUse) {
+            slotImage.gameObject.SetActive(true);
+            this.itemSprite = item.ItemImage;
+            slotImage.sprite = this.itemSprite;
 
-        this.ItemName = item.name;
-        SlotInUse = true;
+            this.ItemName = item.name;
+            SlotInUse = true;
 
-        this.damage = item.Damage;
-        this.defense = item.Defense;
-        for (int i = 0; i < equipmentSO.equipmentSO.Length; i++)
-        {
-            if (equipmentSO.equipmentSO[i].name == this.name)
+            this.damage = item.Damage;
+            this.defense = item.Defense;
+
+            this.GetComponent<ItemSlot>().Item = item;
+
+            for (int i = 0; i < equipmentSO.equipmentSO.Length; i++)
             {
-                equipmentSO.equipmentSO[i].EquipItem(item);
-                EquipItem(item);
+                if (equipmentSO.equipmentSO[i].name == this.name)
+                {
+                    equipmentSO.equipmentSO[i].EquipItem(item);
+                    EquipItem(item);
+                }
             }
         }
     }
@@ -64,10 +70,11 @@ public class EquipingItems : MonoBehaviour
     public void RemoveGear(ItemStats item)
     {
         //UpdateImage
-        Destroy(this.itemSprite);
+
 
         this.ItemName = "";
         SlotInUse = false;
+
 
         for (int i = 0; i < equipmentSO.equipmentSO.Length; i++)
         {
