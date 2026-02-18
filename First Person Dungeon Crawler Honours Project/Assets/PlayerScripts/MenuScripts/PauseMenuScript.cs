@@ -12,6 +12,7 @@ public class PauseMenuScript : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
+        
     }
 
     // Update is called once per frame

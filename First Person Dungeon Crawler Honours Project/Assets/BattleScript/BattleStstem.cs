@@ -27,9 +27,10 @@ public class BattleStstem : MonoBehaviour
     public HUDScript playerHUD;
     public HUDScript enemyHUD;
 
-    public bool BossEnemy;
 
     GameObject enemyEncountered;
+
+    public bool BossEncounter = DataCarryScript.instance.bossEnemy;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class BattleStstem : MonoBehaviour
 
     IEnumerator BattleSetup()
     {
-        if (!BossEnemy) {
+        if (!BossEncounter) {
             int randLowLimit = 1;
             int randHighLimit = 100;
             int randEncounter = 50;
@@ -59,13 +60,13 @@ public class BattleStstem : MonoBehaviour
         }
 
 
-            GameObject enemyGO = Instantiate(enemyEncountered, enemyBattleStation);
+        GameObject enemyGO = Instantiate(enemyEncountered, enemyBattleStation);
         enemyUnit = enemyGO.GetComponent<EnemyScript>();
         dialogueText.text = "Accosted by " + enemyUnit.eName;
 
         playerHUD.setHUD();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         currState = BattleState.PLAYERPHASE;
         PlayerPhase();
     }

@@ -72,6 +72,12 @@ public class InteractObject : MonoBehaviour
                 DataCarryScript.instance.locationData = "Level 5";
                 SceneManager.LoadScene("Level5_FinalLevel");
                 break;
+            case 4:
+                SceneManager.LoadScene("Battle", LoadSceneMode.Additive);
+                DataCarryScript.instance.movementDisabled = true;
+                DataCarryScript.instance.inbattleData = true;
+                DataCarryScript.instance.bossEnemy = true;
+                break;
         }
     }
 

@@ -18,6 +18,8 @@ public class DataCarryScript : MonoBehaviour
     public int KeysData;
     public int DefenseData;
 
+    public bool BossEnemy;
+
     public string nameData { get => NameData; set => NameData = value; }
     public int maxHPData { get => MaxHPData; set => MaxHPData = value; }
     public int currHPData { get => CurrHPData; set => CurrHPData = value; }
@@ -33,6 +35,7 @@ public class DataCarryScript : MonoBehaviour
     public int keysData { get => KeysData; set => KeysData = value; }
     public int defenseData { get => DefenseData; set => DefenseData = value; }
 
+    public bool bossEnemy { get => BossEnemy; set => BossEnemy = value; }
     public static DataCarryScript instance;
 
     private void Awake()

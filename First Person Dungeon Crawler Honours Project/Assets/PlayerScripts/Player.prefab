@@ -550,9 +550,9 @@ MonoBehaviour:
   smoothMovement: 1
   freeMovement: 1
   movementSpeed: 5
-  movementRotationSpeed: 400
+  movementRotationSpeed: 200
   orientation: {fileID: 4764604582233541395}
-  randNumber: 10
+  randNumber: 0
   encounterTime: 0
 --- !u!114 &9209030558221536348
 MonoBehaviour:
@@ -661,8 +661,8 @@ MonoBehaviour:
   LVLText: {fileID: 5201141956265986470}
   NameText: {fileID: 6577997470432559683}
   LocationText: {fileID: 3937548738031994127}
-  KeysText: {fileID: 0}
-  UIVisable: 0
+  KeysText: {fileID: 6614947416864716216}
+  UIVisable: 1
 --- !u!114 &4335566220454306694
 MonoBehaviour:
   m_ObjectHideFlags: 0

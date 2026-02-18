@@ -146,6 +146,7 @@ public class PlayerController : MonoBehaviour {
                     DataCarryScript.instance.movementDisabled = true;
                     DataCarryScript.instance.inbattleData = true;
                     encounterBarrier = 0;
+                    break;
                 }
                 break;
 
