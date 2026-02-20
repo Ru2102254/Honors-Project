@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -12,6 +13,9 @@ public class PlayerInventory : MonoBehaviour
     public InventoryScript inventory;
 
     ItemStats Item;
+
+    GameObject InventoryGetter;
+    GameObject EquipmentCanvasGetter;
     private void Start()
     {
         PlayerGetter = GameObject.Find("Player");
@@ -19,6 +23,15 @@ public class PlayerInventory : MonoBehaviour
         inventory = new InventoryScript();
         uiInventory.SetInventory(inventory);
     }
+
+
+    public void OpenEquipmentMenu()
+    {
+        InventoryGetter = GameObject.Find("InventoryMenu");
+        EquipmentCanvasGetter = InventoryGetter.transform.GetChild(0).gameObject;
+        EquipmentCanvasGetter.gameObject.SetActive(true);
+    }
+
 
     public void AddItemFunct(ItemStats Item)
     {

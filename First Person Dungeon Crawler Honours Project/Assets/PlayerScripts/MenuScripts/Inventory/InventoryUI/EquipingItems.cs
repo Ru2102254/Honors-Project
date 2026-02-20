@@ -87,6 +87,10 @@ public class EquipingItems : MonoBehaviour
         
     }
 
+    public void UseItem(ItemStats item)
+    {
+
+    }
 
     public void PreviewEquipment()
     {
