@@ -5521,6 +5521,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2633211543547442290, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
+      propertyPath: randNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633211543547442290, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
+      propertyPath: encounterTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2702934536396213420, guid: 19ef37b528546884bb1c33e9734ffdb5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5

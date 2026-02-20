@@ -11,8 +11,9 @@ public class BattleStstem : MonoBehaviour
 {
 
     public BattleState currState;
-    public GameObject enemyPrefab;
-    public GameObject Enemy2;
+    public GameObject BatEnemy;
+    public GameObject TreeEnemy;
+    public GameObject SeaDragon;
 
 
     public GameObject Enemy_Boss;
@@ -28,12 +29,13 @@ public class BattleStstem : MonoBehaviour
     public HUDScript enemyHUD;
 
 
-    GameObject enemyEncountered;
+    public GameObject enemyEncountered;
 
-    public bool BossEncounter = DataCarryScript.instance.bossEnemy;
+    public bool BossEncounter;
 
     void Start()
     {
+        BossEncounter = DataCarryScript.instance.BossEnemy;
         DataCarryScript.instance.movementDisabled = true;
         currState = BattleState.START;
         StartCoroutine(BattleSetup());
@@ -44,14 +46,19 @@ public class BattleStstem : MonoBehaviour
         if (!BossEncounter) {
             int randLowLimit = 1;
             int randHighLimit = 100;
-            int randEncounter = 50;
-            if (Random.Range(randLowLimit, randHighLimit) <= randEncounter)
+            int randEnenmy = 60;
+            int randEnenmy2 = 80;
+            if (Random.Range(randLowLimit, randHighLimit) <= randEnenmy)
             {
-                enemyEncountered = enemyPrefab;
+                enemyEncountered = BatEnemy;
             }
-            else
-            {
-                enemyEncountered = Enemy2; 
+            else if (Random.Range(randLowLimit,randHighLimit) <= randEnenmy2) {
+            
+                enemyEncountered = TreeEnemy; 
+            }
+            else {
+                
+                    enemyEncountered = SeaDragon;
             }
         }
         else
@@ -105,16 +112,25 @@ public class BattleStstem : MonoBehaviour
         int RandStopFightLow = 1;
         int RandStopFightLimit= 100;
 
-
-        dialogueText.text = "You want to stop?";
-        yield return new WaitForSeconds(0.1f);
-        if (Random.Range(RandStopFightLow, RandStopFightLimit) <= RandStopFight) {
-            EndBattle();
+        if (!BossEncounter)
+        {
+            dialogueText.text = "You want to stop?";
+            yield return new WaitForSeconds(1f);
+            if (Random.Range(RandStopFightLow, RandStopFightLimit) <= RandStopFight)
+            {
+                EndBattle();
+            }
+            else
+            {
+                dialogueText.text = "" + enemyEncountered.name + " refuses to stop";
+                yield return new WaitForSeconds(1f);
+                currState = BattleState.ENEMYPHASE;
+                StartCoroutine(EnemyPhase());
+            }
         }
         else
         {
-            currState = BattleState.ENEMYPHASE;
-            StartCoroutine(EnemyPhase());
+            dialogueText.text = "Can't abscond " + playerHUD.playerName;
         }
     }
 
@@ -124,18 +140,28 @@ public class BattleStstem : MonoBehaviour
         int RandItem = 20;
         int RandItemLow = 1;
         int RandItemLimit = 100;
-        dialogueText.text = "You want an item?";
-        yield return new WaitForSeconds(0.1f);
-        if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+        if (!BossEncounter)
         {
-            dialogueText.text = "You got a ";
-            currState = BattleState.WIN;
-            EndBattle();
+            dialogueText.text = "You want an item?";
+            yield return new WaitForSeconds(1f);
+            if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+            {
+                dialogueText.text = "You got a ";
+                yield return new WaitForSeconds(1f);
+                currState = BattleState.WIN;
+                EndBattle();
+            }
+            else
+            {
+                dialogueText.text = "" + enemyEncountered.name + " doesn't give anything";
+                yield return new WaitForSeconds(1f);
+                currState = BattleState.ENEMYPHASE;
+                StartCoroutine(EnemyPhase());
+            }
         }
         else
         {
-            currState = BattleState.ENEMYPHASE;
-            StartCoroutine(EnemyPhase());
+            dialogueText.text = "Can't abscond " + playerHUD.playerName;
         }
     }
     IEnumerator TalkMoney()
@@ -145,20 +171,28 @@ public class BattleStstem : MonoBehaviour
         int RandItemLow = 1;
         int RandItemLimit = 100;
         int MoneyGain = enemyUnit.MoneyDrop;
-        dialogueText.text = "You want an item?";
-        yield return new WaitForSeconds(0.1f);
-        if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+
+        if (!BossEncounter)
         {
-            DataCarryScript.instance.CurrMoneyData += MoneyGain;
-            dialogueText.text = "You got " + MoneyGain + " money!";
-            yield return new WaitForSeconds(1);
-            currState = BattleState.WIN;
-            EndBattle();
+            dialogueText.text = "You want an item?";
+            yield return new WaitForSeconds(0.1f);
+            if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+            {
+                DataCarryScript.instance.CurrMoneyData += MoneyGain;
+                dialogueText.text = "You got " + MoneyGain + " money!";
+                yield return new WaitForSeconds(1);
+                currState = BattleState.WIN;
+                EndBattle();
+            }
+            else
+            {
+                currState = BattleState.ENEMYPHASE;
+                StartCoroutine(EnemyPhase());
+            }
         }
         else
         {
-            currState = BattleState.ENEMYPHASE;
-            StartCoroutine(EnemyPhase());
+            dialogueText.text = "Can't abscond " + playerHUD.playerName;
         }
     }
 
@@ -168,20 +202,28 @@ public class BattleStstem : MonoBehaviour
         int RandItem = 20;
         int RandItemLow = 1;
         int RandItemLimit = 100;
-        dialogueText.text = "You want to run?";
-        yield return new WaitForSeconds(1f);
-        if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
-        {;
-            dialogueText.text = "You got away safely!";
+        if (!BossEncounter)
+        {
+            dialogueText.text = "You want to run?";
             yield return new WaitForSeconds(1f);
-            currState = BattleState.WIN;
-            EndBattle();
+            if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
+            {
+                dialogueText.text = "You got away safely!";
+                yield return new WaitForSeconds(1f);
+                currState = BattleState.WIN;
+                EndBattle();
+            }
+            else
+            {
+                currState = BattleState.ENEMYPHASE;
+                StartCoroutine(EnemyPhase());
+            }
         }
         else
         {
-           currState = BattleState.ENEMYPHASE;
-           StartCoroutine(EnemyPhase());
+            dialogueText.text = "Can't abscond " + playerHUD.playerName;
         }
+            
     }
 
     void PlayerPhase()
