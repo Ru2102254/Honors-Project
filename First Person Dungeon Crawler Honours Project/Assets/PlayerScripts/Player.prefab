@@ -1933,10 +1933,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHUDCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3391299671799172257, guid: 66ba30451c39dc74baf7852ad12c31d6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3717129921376192808, guid: 66ba30451c39dc74baf7852ad12c31d6, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -32.22946
