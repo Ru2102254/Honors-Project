@@ -15,10 +15,12 @@ public class CustomisingUI : MonoBehaviour
     public GameObject ButtonPanel;
 
     Vector3 buttonScale = new Vector3(1, 1, 1);
-    Vector3 buttonPosition = new Vector3(1, 1, 1);
+    Vector3 buttonPosition = new Vector3(330, 120, 0);
+    Vector3 defaultButtonPosition = new Vector3(330, 120 , 0);
 
     float defaultTextSize = 20;
     float defaultButton = 1;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void SetButtonTextSize(float textSize)
@@ -64,5 +66,11 @@ public class CustomisingUI : MonoBehaviour
     {
         SetButtonWidth(defaultButton);
         SetButtonHeight(defaultButton);
+    }
+
+    public void ResetButtonLocation()
+    {
+        SetButtonX(defaultButtonPosition.x);
+        SetButtonY(defaultButtonPosition.y);
     }
 }
