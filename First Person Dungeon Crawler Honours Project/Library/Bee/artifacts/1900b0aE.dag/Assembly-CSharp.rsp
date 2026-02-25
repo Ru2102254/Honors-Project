@@ -452,6 +452,7 @@
 "Assets/PlayerScripts/DataCarryScript.cs"
 "Assets/PlayerScripts/MenuScripts/CustomisingUI.cs"
 "Assets/PlayerScripts/MenuScripts/GameOver.cs"
+"Assets/PlayerScripts/MenuScripts/HudCusomisation.cs"
 "Assets/PlayerScripts/MenuScripts/Inventory/BattleInventory.cs"
 "Assets/PlayerScripts/MenuScripts/Inventory/InventoryScript.cs"
 "Assets/PlayerScripts/MenuScripts/Inventory/InventoryUI/EquipingItems.cs"

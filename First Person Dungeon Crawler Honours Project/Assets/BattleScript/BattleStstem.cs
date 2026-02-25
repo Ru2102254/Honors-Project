@@ -35,7 +35,7 @@ public class BattleStstem : MonoBehaviour
 
     public GameObject customisationOptions;
 
-    void Start()
+    void Awake()
     {
         BossEncounter = DataCarryScript.instance.BossEnemy;
         DataCarryScript.instance.movementDisabled = true;
@@ -75,7 +75,7 @@ public class BattleStstem : MonoBehaviour
 
         playerHUD.setHUD();
 
-        customisationOptions = GameObject.Find("CustomisationCanvas");
+        customisationOptions = GameObject.Find("BattleCustomCanvas");
         customisationOptions.GetComponent<CustomisingUI>().SetUI();
 
 

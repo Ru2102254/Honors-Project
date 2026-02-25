@@ -3473,7 +3473,7 @@ GameObject:
   - component: {fileID: 543222112}
   - component: {fileID: 543222111}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ButtonWidthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: SetButtonWidth
         m_Mode: 0
@@ -6791,7 +6791,7 @@ GameObject:
   - component: {fileID: 903093313}
   - component: {fileID: 903093312}
   m_Layer: 5
-  m_Name: Slider (1)
+  m_Name: BattleTextSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6848,7 +6848,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: SetBattleTextSize
         m_Mode: 0
@@ -7234,7 +7234,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: ResetButtonSize
         m_Mode: 1
@@ -7319,7 +7319,7 @@ GameObject:
   - component: {fileID: 1056558690}
   - component: {fileID: 1056558689}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ButtonTextSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7376,7 +7376,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: SetButtonTextSize
         m_Mode: 0
@@ -8702,7 +8702,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: ResetButtonLocation
         m_Mode: 1
@@ -9396,7 +9396,7 @@ GameObject:
   - component: {fileID: 1366845749}
   - component: {fileID: 1366845748}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ButtonHeightSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9453,7 +9453,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: SetButtonHeight
         m_Mode: 0
@@ -10492,7 +10492,7 @@ GameObject:
   - component: {fileID: 1478138124}
   - component: {fileID: 1478138123}
   m_Layer: 5
-  m_Name: BTN_Item
+  m_Name: TXT_Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11558,7 +11558,7 @@ GameObject:
   - component: {fileID: 1597443400}
   - component: {fileID: 1597443399}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ButtonYSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11615,7 +11615,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: SetButtonY
         m_Mode: 0
@@ -12612,7 +12612,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Back
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13374,7 +13376,7 @@ GameObject:
   - component: {fileID: 1807087595}
   - component: {fileID: 1807087594}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: ButtonXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13431,7 +13433,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: SetButtonX
         m_Mode: 0
@@ -14422,7 +14424,7 @@ GameObject:
   - component: {fileID: 1941990606}
   - component: {fileID: 1941990605}
   m_Layer: 5
-  m_Name: ButtonPanel
+  m_Name: BattleButtonPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16308,7 +16310,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2091804017}
         m_TargetAssemblyTypeName: CustomisingUI, Assembly-CSharp
         m_MethodName: ResetTextSize
         m_Mode: 1
@@ -16501,7 +16503,7 @@ GameObject:
   - component: {fileID: 2091804017}
   - component: {fileID: 2091804016}
   m_Layer: 5
-  m_Name: CustomisationCanvas
+  m_Name: BattleCustomCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16531,15 +16533,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6f66333960aa545a7354851baa3d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomisingUI
-  FightText: {fileID: 1298401809}
-  TalkText: {fileID: 1300647637}
-  ItemText: {fileID: 1478138123}
-  AbscondText: {fileID: 1822738148}
-  CustomiseText: {fileID: 418117049}
-  DialogueText: {fileID: 520224898}
-  NameText: {fileID: 568892051}
-  LvlText: {fileID: 590117143}
-  ButtonPanel: {fileID: 1941990603}
+  FightTextBox: {fileID: 0}
+  TalkTextBox: {fileID: 0}
+  ItemTextBox: {fileID: 0}
+  AbscondTextBox: {fileID: 0}
+  CustomiseTextBox: {fileID: 0}
+  DialogueTextBox: {fileID: 0}
+  NameTextBox: {fileID: 0}
+  LvlTextBox: {fileID: 0}
+  FightText: {fileID: 0}
+  TalkText: {fileID: 0}
+  ItemText: {fileID: 0}
+  AbscondText: {fileID: 0}
+  CustomiseText: {fileID: 0}
+  DialogueText: {fileID: 0}
+  NameText: {fileID: 0}
+  LvlText: {fileID: 0}
+  ButtonPanel: {fileID: 0}
   newTextSize: 20
   newBattleSize: 20
   newButtonScaleX: 1

@@ -2,9 +2,21 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class CustomisingUI : MonoBehaviour
 {
+
+    public GameObject FightTextBox;
+    public GameObject TalkTextBox;
+    public GameObject ItemTextBox;
+    public GameObject AbscondTextBox;
+    public GameObject CustomiseTextBox;
+    public GameObject DialogueTextBox;
+    public GameObject NameTextBox;
+    public GameObject LvlTextBox;
+
     public TextMeshProUGUI FightText;
     public TextMeshProUGUI TalkText;
     public TextMeshProUGUI ItemText;
@@ -15,6 +27,8 @@ public class CustomisingUI : MonoBehaviour
     public TextMeshProUGUI LvlText;
 
     public GameObject ButtonPanel;
+
+
 
     Vector3 buttonScale = new Vector3(1, 1, 1);
     Vector3 buttonPosition = new Vector3(330, 120, 0);
@@ -33,7 +47,37 @@ public class CustomisingUI : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+
+
     public void SetUI()
+    {
+
+        FightTextBox = GameObject.Find("TXT_FIght");
+        TalkTextBox = GameObject.Find("TXT_Talk");
+        ItemTextBox = GameObject.Find("TXT_Item");
+        AbscondTextBox = GameObject.Find("TXT_Abscond");
+        CustomiseTextBox = GameObject.Find("TXT_Customise");
+        DialogueTextBox = GameObject.Find("TXT_BattleText");
+        NameTextBox = GameObject.Find("TXT_Name");
+        LvlTextBox = GameObject.Find("TXT_Level");
+
+        FightText = FightTextBox.GetComponent<TextMeshProUGUI>();
+        TalkText = TalkTextBox.GetComponent<TextMeshProUGUI>();
+        ItemText = ItemTextBox.GetComponent<TextMeshProUGUI>();
+        AbscondText = AbscondTextBox.GetComponent<TextMeshProUGUI>();
+        CustomiseText = CustomiseTextBox.GetComponent<TextMeshProUGUI>();
+        DialogueText = DialogueTextBox.GetComponent<TextMeshProUGUI>();
+        NameText = NameTextBox.GetComponent<TextMeshProUGUI>();
+        LvlText = LvlTextBox.GetComponent<TextMeshProUGUI>();
+
+        ButtonPanel = GameObject.Find("BattleButtonPanel");
+
+        setSizes();
+
+
+    }
+
+    public void setSizes()
     {
         FightText.fontSize = newTextSize;
         TalkText.fontSize = newTextSize;
@@ -51,15 +95,14 @@ public class CustomisingUI : MonoBehaviour
         ButtonPanel.transform.localScale = buttonScale;
 
         buttonPosition.x = newButtonX;
-        ButtonPanel.transform.position = buttonPosition;
-        buttonPosition.x = newButtonY;
+        buttonPosition.y = newButtonY;
         ButtonPanel.transform.position = buttonPosition;
     }
     public void SetButtonTextSize(float textSize)
     {
         FightText.fontSize = textSize;
-        TalkText.fontSize = textSize; 
-        ItemText.fontSize = textSize; 
+        TalkText.fontSize = textSize;
+        ItemText.fontSize = textSize;
         AbscondText.fontSize = textSize;
         CustomiseText.fontSize = textSize;
         NameText.fontSize = textSize;
