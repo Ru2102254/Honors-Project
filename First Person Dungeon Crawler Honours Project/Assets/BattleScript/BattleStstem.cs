@@ -33,6 +33,8 @@ public class BattleStstem : MonoBehaviour
 
     public bool BossEncounter;
 
+    public GameObject customisationOptions;
+
     void Start()
     {
         BossEncounter = DataCarryScript.instance.BossEnemy;
@@ -72,6 +74,10 @@ public class BattleStstem : MonoBehaviour
         dialogueText.text = "Accosted by " + enemyUnit.eName;
 
         playerHUD.setHUD();
+
+        customisationOptions = GameObject.Find("CustomisationCanvas");
+        customisationOptions.GetComponent<CustomisingUI>().SetUI();
+
 
         yield return new WaitForSeconds(3f);
         currState = BattleState.PLAYERPHASE;

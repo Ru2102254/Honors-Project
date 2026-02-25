@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -245,14 +245,14 @@ MonoBehaviour:
     y: 730
     width: 1381
     height: 251
-  m_MinSize: {x: 231, y: 276}
-  m_MaxSize: {x: 10001, y: 10026}
-  m_ActualView: {fileID: 14}
+  m_MinSize: {x: 101, y: 126}
+  m_MaxSize: {x: 4001, y: 4026}
+  m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 539
     height: 981
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -318,9 +318,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 8295ffff12fbffff14fbffff34ae0000e6ae0000a4af0000c4b0000016b20000
+      m_SelectedIDs: e6a50200
+      m_LastClickedID: 173542
+      m_ExpandedIDs: 6c16fefff624feff3c30feff0a93feff5ca2feffaaa6feffeab8feff32c1feffe4d9feff62eefeff98f7feff10fefeff0206ffff7023ffff6a29ffff3831ffff2a39ffff7a46ffffa44bfffff052ffffe45affff9660ffff4867ffff3e6fffff8c75ffffa088ffff54b8ffff6eefffff14fbfffff4ffffff34ae00008eae00007eaf0000acaf000026b0000066b00000aab0000034b10000b8b10000c2b1000016b2000028b2000084b20000bc1c010000310100083201006a330100a8340100de3401001435010098350100b23501001636010098360100d836010024380100803801009e38010044450100ae470100484d0100b24f0100246b01002c6c01008e6d0100a66e010042710100e0010200ee0102006a02020086020200280302004c0302005403020010a40200baa50200e6a50200c0a7020052a8020078a80200e6a80200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -742,9 +742,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 535, y: 363.5, z: 0}
+    m_Target: {x: 536.16205, y: 287.96878, z: 0}
     speed: 2
-    m_Value: {x: 535, y: 363.5, z: 0}
+    m_Value: {x: 536.16205, y: 287.96878, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -794,9 +794,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 379.26053
+    m_Target: 490.61774
     speed: 2
-    m_Value: 379.26053
+    m_Value: 490.61774
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -877,7 +877,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/PlayerScripts/MenuScripts
+    - Assets/BattleScript
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -887,7 +887,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/PlayerScripts/MenuScripts
+  - Assets/BattleScript
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\RLDM4\Documents\GitHub\Honors-Project\First Person
     Dungeon Crawler Honours Project
@@ -895,9 +895,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: a8bc0000
-    m_LastClickedID: 48296
-    m_ExpandedIDs: 00000000a0bc0000a2bc0000a4bc0000a6bc0000a8bc00000ebd000000ca9a3b
+    m_SelectedIDs: 16bd0000
+    m_LastClickedID: 48406
+    m_ExpandedIDs: 00000000b2bc0000b4bc0000b6bc0000b8bc0000babc000020bd000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -926,7 +926,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0bc0000a2bc0000a4bc0000a6bc0000a8bc0000
+    m_ExpandedIDs: 00000000b2bc0000b4bc0000b6bc0000b8bc0000babc0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -952,8 +952,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: f6020200
+    m_LastClickedInstanceID: 131830
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300002ac500004cc500009cb00000acb00000aeb00000b0b00000b2b00000b4b00000cec30000cc310100
     m_RenameOverlay:
@@ -1007,7 +1007,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 809
-    width: 1405
+    width: 1380
     height: 225
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1063,7 +1063,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 295
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
