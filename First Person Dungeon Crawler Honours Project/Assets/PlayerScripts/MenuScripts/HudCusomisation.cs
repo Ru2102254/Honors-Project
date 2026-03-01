@@ -203,7 +203,7 @@ public class HudCusomisation : MonoBehaviour
         switch (colourOptionPicked)
         {
             case 0:
-                PlayerInfo.GetComponent<Image>().color = Color.red;
+                colourChangeMaterial.SetColor("_NewColour", Color.red);
                 break;
 
         }

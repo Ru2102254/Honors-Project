@@ -22,7 +22,7 @@ MonoBehaviour:
   m_Values:
   - '{}'
   - '{}'
-  - '{"position":{"x":-1461.0,"y":26.0,"z":0.0},"scale":{"x":1.3848034143447877,"y":1.3848034143447877,"z":1.0}}'
-  - '{"m_Version":39,"m_SelectedElementsArray":[]}'
+  - '{"position":{"x":447.0,"y":167.0,"z":0.0},"scale":{"x":0.44070518016815188,"y":0.44070518016815188,"z":1.0}}'
+  - '{"m_Version":42,"m_SelectedElementsArray":[]}'
   - '{}'
   - '{}'
