@@ -7,6 +7,7 @@ using Image = UnityEngine.UI.Image;
 
 public class CustomisingUI : MonoBehaviour
 {
+    public Material ColourChange;
 
     public GameObject FightTextBox;
     public GameObject TalkTextBox;
@@ -150,7 +151,7 @@ public class CustomisingUI : MonoBehaviour
     {
         switch (colourOptionPicked) {
             case 0:
-                ButtonPanel.GetComponent<Image>().color = Color.red;
+                ColourChange.color = Color.red;
                 break;
 
         }

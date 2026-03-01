@@ -25,6 +25,8 @@ public class HudCusomisation : MonoBehaviour
     public TextMeshProUGUI KeysTXT;
     public TextMeshProUGUI KeysNumTXT;
 
+    public Material colourChangeMaterial;
+
     public int PanelType;
 
 

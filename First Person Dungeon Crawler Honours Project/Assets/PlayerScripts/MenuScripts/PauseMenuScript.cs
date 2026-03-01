@@ -7,6 +7,7 @@ public class PauseMenuScript : MonoBehaviour
 {
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
+    public GameObject PauseBackGroundCanvas;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,14 +27,18 @@ public class PauseMenuScript : MonoBehaviour
 
     void Stop()
     {
+        PauseBackGroundCanvas.SetActive(true);
         PauseMenuCanvas.SetActive(true);
+        
         Time.timeScale = 0f;
         Paused = true;
     }
 
     public void Resume()
     {
+        PauseBackGroundCanvas.SetActive(false);
         PauseMenuCanvas.SetActive(false);
+        
         Time.timeScale = 1f;
         Paused = false;
     }
