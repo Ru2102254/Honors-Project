@@ -203,7 +203,22 @@ public class HudCusomisation : MonoBehaviour
         switch (colourOptionPicked)
         {
             case 0:
-                colourChangeMaterial.SetColor("_NewColour", Color.red);
+                colourChangeMaterial.SetColor("_NewColour", Color.white);
+                break;
+            case 1:
+                colourChangeMaterial.SetColor("_NewColour", Color.softRed);
+                break;
+            case 2:
+                colourChangeMaterial.SetColor("_NewColour", Color.softBlue);
+                break;
+            case 3:
+                colourChangeMaterial.SetColor("_NewColour", Color.softGreen);
+                break;
+            case 4:
+                colourChangeMaterial.SetColor("_NewColour", Color.softYellow);
+                break;
+            case 5:
+                colourChangeMaterial.SetColor("_NewColour", Color.rebeccaPurple);
                 break;
 
         }
