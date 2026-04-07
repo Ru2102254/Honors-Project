@@ -79,6 +79,9 @@ public class PlayerInventoryStatsUI : MonoBehaviour
                 AccessorySlot.EquipGear(item);
                 UnequipAccessoryBTN.gameObject.SetActive(true);
                 break;
+            case ItemStats.ItemType.HealthItem:
+                UseHealingItem(item);
+                break;
         }
         StatsChangePlus(item);
         inventroyScript.RemoveItem(item);
@@ -123,5 +126,17 @@ public class PlayerInventoryStatsUI : MonoBehaviour
 
     }
 
+
+    public void UseHealingItem(ItemStats item)
+    {
+        if (DataCarryScript.instance.currHPData < DataCarryScript.instance.maxHPData)
+        {
+            DataCarryScript.instance.currHPData += item.Healing;
+            if (DataCarryScript.instance.currHPData > DataCarryScript.instance.maxHPData)
+            {
+                DataCarryScript.instance.currHPData = DataCarryScript.instance.maxHPData;
+            }
+        }
+    }
 
 }
