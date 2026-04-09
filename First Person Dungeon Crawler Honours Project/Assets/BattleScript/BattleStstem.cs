@@ -40,6 +40,8 @@ public class BattleStstem : MonoBehaviour
         BossEncounter = DataCarryScript.instance.BossEnemy;
         DataCarryScript.instance.movementDisabled = true;
         currState = BattleState.START;
+        FindFirstObjectByType<AudioManager>().Stop("Explore");
+        FindFirstObjectByType<AudioManager>().Play("Battle");
         StartCoroutine(BattleSetup());
     }
 
@@ -335,10 +337,11 @@ public class BattleStstem : MonoBehaviour
 
     void EndBattle()
     {
+        FindFirstObjectByType<AudioManager>().Stop("Battle");
         switch (currState)
         {
             case BattleState.WIN:
-
+                FindFirstObjectByType<AudioManager>().Play("Explore");
                 Destroy(enemyUnit.gameObject);
                 SceneManager.UnloadSceneAsync("Battle");
                 DataCarryScript.instance.movementDisabled = false;

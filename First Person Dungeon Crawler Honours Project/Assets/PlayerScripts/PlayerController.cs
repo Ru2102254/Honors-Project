@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour {
         moveAction = playerInput.actions.FindAction("Move");
         rotateAction = playerInput.actions.FindAction("Rotate");
         characterController = GetComponent<CharacterController>();
-
+        FindFirstObjectByType<AudioManager>().Stop("Title");
+        FindFirstObjectByType<AudioManager>().Play("Explore");
     }
 
     void Update()
