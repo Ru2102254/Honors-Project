@@ -16,6 +16,8 @@ public class ShoppingSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        FindFirstObjectByType<AudioManager>().Stop("Explore");
+        FindFirstObjectByType<AudioManager>().Play("Shop");
         PlayerGetter = GameObject.Find("Player");
         MainInventory = PlayerGetter.GetComponent<PlayerInventory>().inventory;
         inventory = new InventoryScript();
@@ -26,6 +28,8 @@ public class ShoppingSystem : MonoBehaviour
 
     public void LeaveShop()
     {
+        FindFirstObjectByType<AudioManager>().Stop("Shop");
+        FindFirstObjectByType<AudioManager>().Play("Explore");
         SceneManager.UnloadSceneAsync("Shopping");
         DataCarryScript.instance.movementDisabled = false;
         DataCarryScript.instance.inbattleData = false;

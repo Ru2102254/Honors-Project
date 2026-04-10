@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5_FinalLevel.unity
     guid: fd665dd55af4b474282fc363334dd9af
+  - enabled: 1
+    path: Assets/Scenes/Winning.unity
+    guid: 60d6e507363fde944832329691891922
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 09ed89bb242901b48baa7491b0bc07bc, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2d836c079fbfca14c9cd1f5ffac093a7, type: 3}

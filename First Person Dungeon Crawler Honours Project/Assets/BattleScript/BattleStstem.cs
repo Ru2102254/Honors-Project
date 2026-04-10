@@ -41,13 +41,13 @@ public class BattleStstem : MonoBehaviour
         DataCarryScript.instance.movementDisabled = true;
         currState = BattleState.START;
         FindFirstObjectByType<AudioManager>().Stop("Explore");
-        FindFirstObjectByType<AudioManager>().Play("Battle");
         StartCoroutine(BattleSetup());
     }
 
     IEnumerator BattleSetup()
     {
         if (!BossEncounter) {
+            FindFirstObjectByType<AudioManager>().Play("Battle");
             int randLowLimit = 1;
             int randHighLimit = 100;
             int randEnenmy = 60;
@@ -67,6 +67,7 @@ public class BattleStstem : MonoBehaviour
         }
         else
         {
+            FindFirstObjectByType<AudioManager>().Play("FinalBoss");
             enemyEncountered = Enemy_Boss;
         }
 
@@ -230,6 +231,7 @@ public class BattleStstem : MonoBehaviour
         else
         {
             dialogueText.text = "Can't abscond " + playerHUD.playerName;
+            PlayerPhase();
         }
             
     }
@@ -337,17 +339,26 @@ public class BattleStstem : MonoBehaviour
 
     void EndBattle()
     {
-        FindFirstObjectByType<AudioManager>().Stop("Battle");
         switch (currState)
         {
             case BattleState.WIN:
-                FindFirstObjectByType<AudioManager>().Play("Explore");
-                Destroy(enemyUnit.gameObject);
-                SceneManager.UnloadSceneAsync("Battle");
-                DataCarryScript.instance.movementDisabled = false;
-                DataCarryScript.instance.inbattleData = false;
+                if (!BossEncounter)
+                {
+                    FindFirstObjectByType<AudioManager>().Stop("Battle");
+                    FindFirstObjectByType<AudioManager>().Play("Explore");
+                    Destroy(enemyUnit.gameObject);
+                    SceneManager.UnloadSceneAsync("Battle");
+                    DataCarryScript.instance.movementDisabled = false;
+                    DataCarryScript.instance.inbattleData = false;
+                    return;
+                }
+                FindFirstObjectByType<AudioManager>().Stop("FinalBoss");
+                FindFirstObjectByType<AudioManager>().Play("Win");
+                SceneManager.LoadScene("Winning");
                 return;
             case BattleState.LOSE:
+                FindFirstObjectByType<AudioManager>().Stop("Battle");
+                FindFirstObjectByType<AudioManager>().Play("Death");
                 SceneManager.LoadScene("Game Over");
                 return;
         }

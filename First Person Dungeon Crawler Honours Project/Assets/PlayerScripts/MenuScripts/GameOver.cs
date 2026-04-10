@@ -15,6 +15,9 @@ public class GameOver: MonoBehaviour {
         SceneManager.LoadScene("Main Menu");
     }
 
-
-    
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Player Has Quit");
+    }
 }
