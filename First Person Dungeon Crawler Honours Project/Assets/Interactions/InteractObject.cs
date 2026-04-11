@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class InteractObject : MonoBehaviour
 {
@@ -9,10 +10,17 @@ public class InteractObject : MonoBehaviour
     public UnityEvent onInteract;
     PlayerController playerController;
     [SerializeField] GameObject player;
+    public GameObject PlayerGetter;
 
     private void Start()
     {
+        PlayerGetter = GameObject.Find("Player");
         playerController = player.GetComponent<PlayerController>();
+    }
+
+    public void GiveItem(ItemStats item)
+    {
+        PlayerGetter.GetComponent<PlayerInventory>().AddItemFunct(item);
     }
 
     public string GetInteractionText()

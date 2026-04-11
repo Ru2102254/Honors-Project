@@ -466,6 +466,7 @@
 "Assets/PlayerScripts/MenuScripts/MainMenu.cs"
 "Assets/PlayerScripts/MenuScripts/PauseCustomise.cs"
 "Assets/PlayerScripts/MenuScripts/PauseMenuScript.cs"
+"Assets/PlayerScripts/MenuScripts/TestSceneScript.cs"
 "Assets/PlayerScripts/PlayerController.cs"
 "Assets/PlayerScripts/PlayerInventory.cs"
 "Assets/PlayerScripts/PlayerLookUI.cs"

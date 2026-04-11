@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class InventoryScript
 {
     public event EventHandler OnItemListChanged;
-    private List<ItemStats> ItemStatsList;
+    public List<ItemStats> ItemStatsList;
 
     public ItemSlot itemSlot;
 
@@ -69,5 +70,20 @@ public class InventoryScript
     public List<ItemStats> GetItemList() {
         return ItemStatsList;
     
+    }
+
+    public void EmptyInventory()
+    {
+
+        ItemStats itemInInventory = null;
+        foreach (ItemStats inventoryItem in ItemStatsList)
+        {
+                inventoryItem.amount -= inventoryItem.amount;
+                itemInInventory = inventoryItem;
+        }
+        if (itemInInventory != null && itemInInventory.amount <= 0)
+        {
+            ItemStatsList.Remove(itemInInventory);
+        }
     }
 }

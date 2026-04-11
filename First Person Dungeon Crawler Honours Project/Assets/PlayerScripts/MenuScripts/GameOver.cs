@@ -7,11 +7,15 @@ public class GameOver: MonoBehaviour {
 
     public void Replay()
     {
+        FindFirstObjectByType<AudioManager>().Stop("Death");
+        FindFirstObjectByType<AudioManager>().Stop("Win");
         SceneManager.LoadScene("Test Space");
     }
 
     public void QuitToMenu()
     {
+        FindFirstObjectByType<AudioManager>().Stop("Death");
+        FindFirstObjectByType<AudioManager>().Stop("Win");
         SceneManager.LoadScene("Main Menu");
     }
 

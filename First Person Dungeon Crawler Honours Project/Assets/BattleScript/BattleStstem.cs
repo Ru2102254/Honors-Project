@@ -316,7 +316,9 @@ public class BattleStstem : MonoBehaviour
 
     bool TakeDamage(int dmg)
     {
-        DataCarryScript.instance.currHPData -= dmg;
+        int defRedDamage = DataCarryScript.instance.defenseData / 10;
+        int trueDmg = dmg - defRedDamage;
+        DataCarryScript.instance.currHPData -= trueDmg;
         if (DataCarryScript.instance.currHPData <= 0)
             return true;
         else
@@ -357,6 +359,7 @@ public class BattleStstem : MonoBehaviour
                 SceneManager.LoadScene("Winning");
                 return;
             case BattleState.LOSE:
+                FindFirstObjectByType<AudioManager>().Stop("FinalBoss");
                 FindFirstObjectByType<AudioManager>().Stop("Battle");
                 FindFirstObjectByType<AudioManager>().Play("Death");
                 SceneManager.LoadScene("Game Over");
