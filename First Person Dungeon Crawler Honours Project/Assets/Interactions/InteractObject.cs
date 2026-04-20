@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using static UnityEditor.Progress;
 
 public class InteractObject : MonoBehaviour
 {
@@ -69,11 +68,11 @@ public class InteractObject : MonoBehaviour
                 SceneManager.LoadScene("Level2");
                 break;
             case 1:
-                DataCarryScript.instance.locationData = "Level 3";
+                DataCarryScript.instance.locationData = "Level 4";
                 SceneManager.LoadScene("Level3");
                 break;
             case 2:
-                DataCarryScript.instance.locationData = "Level 4";
+                DataCarryScript.instance.locationData = "Level 3";
                 SceneManager.LoadScene("Level4");
                 break;
             case 3:

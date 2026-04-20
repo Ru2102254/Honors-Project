@@ -29,11 +29,14 @@ public class CustomisingUI : MonoBehaviour
 
     public GameObject ButtonPanel;
 
+    public GameObject Custombutton;
+
+
 
 
     Vector3 buttonScale = new Vector3(1, 1, 1);
-    Vector3 buttonPosition = new Vector3(330, 120, 0);
-    Vector3 defaultButtonPosition = new Vector3(330, 120 , 0);
+    Vector3 buttonPosition = new Vector3(240, 88, 0);
+    Vector3 defaultButtonPosition = new Vector3(240, 88, 0);
 
     float defaultTextSize = 20;
     float defaultButton = 1;
@@ -42,10 +45,12 @@ public class CustomisingUI : MonoBehaviour
     public float newBattleSize = 20;
     public float newButtonScaleX = 1;
     public float newButtonScaleY = 1;
-    public float newButtonX = 330;
-    public float newButtonY = 120;
+    public float newButtonX = 240;
+    public float newButtonY = 88;
 
 
+
+    public Material colourChangeMaterial;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
 
@@ -57,7 +62,6 @@ public class CustomisingUI : MonoBehaviour
         TalkTextBox = GameObject.Find("TXT_Talk");
         ItemTextBox = GameObject.Find("TXT_Item");
         AbscondTextBox = GameObject.Find("TXT_Abscond");
-        CustomiseTextBox = GameObject.Find("TXT_Customise");
         DialogueTextBox = GameObject.Find("TXT_BattleText");
         NameTextBox = GameObject.Find("TXT_Name");
         LvlTextBox = GameObject.Find("TXT_Level");
@@ -66,12 +70,14 @@ public class CustomisingUI : MonoBehaviour
         TalkText = TalkTextBox.GetComponent<TextMeshProUGUI>();
         ItemText = ItemTextBox.GetComponent<TextMeshProUGUI>();
         AbscondText = AbscondTextBox.GetComponent<TextMeshProUGUI>();
-        CustomiseText = CustomiseTextBox.GetComponent<TextMeshProUGUI>();
+        
         DialogueText = DialogueTextBox.GetComponent<TextMeshProUGUI>();
         NameText = NameTextBox.GetComponent<TextMeshProUGUI>();
         LvlText = LvlTextBox.GetComponent<TextMeshProUGUI>();
 
         ButtonPanel = GameObject.Find("BattleButtonPanel");
+
+        Custombutton = GameObject.Find("CusomisationButton");
 
         setSizes();
 
@@ -84,7 +90,6 @@ public class CustomisingUI : MonoBehaviour
         TalkText.fontSize = newTextSize;
         ItemText.fontSize = newTextSize;
         AbscondText.fontSize = newTextSize;
-        CustomiseText.fontSize = newTextSize;
         NameText.fontSize = newTextSize;
         LvlText.fontSize = newTextSize;
 
@@ -97,7 +102,7 @@ public class CustomisingUI : MonoBehaviour
 
         buttonPosition.x = newButtonX;
         buttonPosition.y = newButtonY;
-        ButtonPanel.transform.position = buttonPosition;
+        ButtonPanel.transform.position = defaultButtonPosition;
     }
     public void SetButtonTextSize(float textSize)
     {
@@ -105,7 +110,6 @@ public class CustomisingUI : MonoBehaviour
         TalkText.fontSize = textSize;
         ItemText.fontSize = textSize;
         AbscondText.fontSize = textSize;
-        CustomiseText.fontSize = textSize;
         NameText.fontSize = textSize;
         LvlText.fontSize = textSize;
 
@@ -149,9 +153,25 @@ public class CustomisingUI : MonoBehaviour
 
     public void SetColour(int colourOptionPicked)
     {
-        switch (colourOptionPicked) {
+        switch (colourOptionPicked)
+        {
             case 0:
-                ColourChange.color = Color.red;
+                colourChangeMaterial.SetColor("_NewColour", Color.white);
+                break;
+            case 1:
+                colourChangeMaterial.SetColor("_NewColour", Color.softRed);
+                break;
+            case 2:
+                colourChangeMaterial.SetColor("_NewColour", Color.softBlue);
+                break;
+            case 3:
+                colourChangeMaterial.SetColor("_NewColour", Color.softGreen);
+                break;
+            case 4:
+                colourChangeMaterial.SetColor("_NewColour", Color.softYellow);
+                break;
+            case 5:
+                colourChangeMaterial.SetColor("_NewColour", Color.rebeccaPurple);
                 break;
 
         }
@@ -167,5 +187,11 @@ public class CustomisingUI : MonoBehaviour
     {
         SetButtonX(defaultButtonPosition.x);
         SetButtonY(defaultButtonPosition.y);
+    }
+
+
+    public void ToggleCustomisation()
+    {
+        Custombutton.SetActive(true);
     }
 }

@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using static UnityEditor.Progress;
 using Image = UnityEngine.UI.Image;
 
 public class InventroyUI : MonoBehaviour

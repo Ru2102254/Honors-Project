@@ -34,18 +34,20 @@ public class BattleStstem : MonoBehaviour
     public bool BossEncounter;
 
     public GameObject customisationOptions;
+    public Transform customPanel;
 
     void Awake()
     {
+        customisationOptions = GameObject.Find("BattleCustomCanvas");
         BossEncounter = DataCarryScript.instance.BossEnemy;
         DataCarryScript.instance.movementDisabled = true;
         currState = BattleState.START;
-        FindFirstObjectByType<AudioManager>().Stop("Explore");
         StartCoroutine(BattleSetup());
     }
 
     IEnumerator BattleSetup()
     {
+        FindFirstObjectByType<AudioManager>().Stop("Explore");
         if (!BossEncounter) {
             FindFirstObjectByType<AudioManager>().Play("Battle");
             int randLowLimit = 1;
@@ -78,7 +80,7 @@ public class BattleStstem : MonoBehaviour
 
         playerHUD.setHUD();
 
-        customisationOptions = GameObject.Find("BattleCustomCanvas");
+        //customisationOptions = GameObject.Find("BattleCustomCanvas");
         customisationOptions.GetComponent<CustomisingUI>().SetUI();
 
 
@@ -127,6 +129,7 @@ public class BattleStstem : MonoBehaviour
             yield return new WaitForSeconds(1f);
             if (Random.Range(RandStopFightLow, RandStopFightLimit) <= RandStopFight)
             {
+                currState = BattleState.WIN; 
                 EndBattle();
             }
             else
@@ -139,7 +142,10 @@ public class BattleStstem : MonoBehaviour
         }
         else
         {
-            dialogueText.text = "Can't abscond " + playerHUD.playerName;
+            dialogueText.text = "Can't talk " + playerHUD.playerName;
+            yield return new WaitForSeconds(1f);
+            currState = BattleState.PLAYERPHASE;
+            PlayerPhase();
         }
     }
 
@@ -152,25 +158,28 @@ public class BattleStstem : MonoBehaviour
         if (!BossEncounter)
         {
             dialogueText.text = "You want an item?";
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1);
             if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
             {
                 dialogueText.text = "You got a ";
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1);
                 currState = BattleState.WIN;
                 EndBattle();
             }
             else
             {
                 dialogueText.text = "" + enemyEncountered.name + " doesn't give anything";
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1);
                 currState = BattleState.ENEMYPHASE;
                 StartCoroutine(EnemyPhase());
             }
         }
         else
         {
-            dialogueText.text = "Can't abscond " + playerHUD.playerName;
+            dialogueText.text = "Can't talk " + playerHUD.playerName;
+            yield return new WaitForSeconds(1f);
+            currState = BattleState.PLAYERPHASE;
+            PlayerPhase();
         }
     }
     IEnumerator TalkMoney()
@@ -184,12 +193,12 @@ public class BattleStstem : MonoBehaviour
         if (!BossEncounter)
         {
             dialogueText.text = "You want an item?";
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1f);
             if (Random.Range(RandItemLow, RandItemLimit) <= RandItem)
             {
                 DataCarryScript.instance.CurrMoneyData += MoneyGain;
                 dialogueText.text = "You got " + MoneyGain + " money!";
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(1f);
                 currState = BattleState.WIN;
                 EndBattle();
             }
@@ -201,7 +210,11 @@ public class BattleStstem : MonoBehaviour
         }
         else
         {
-            dialogueText.text = "Can't abscond " + playerHUD.playerName;
+            dialogueText.text = "Can't talk " + playerHUD.playerName;
+            yield return new WaitForSeconds(1f);
+            currState = BattleState.PLAYERPHASE;
+            PlayerPhase();
+
         }
     }
 
@@ -224,6 +237,8 @@ public class BattleStstem : MonoBehaviour
             }
             else
             {
+                dialogueText.text = "You're stopped";
+                yield return new WaitForSeconds(1f);
                 currState = BattleState.ENEMYPHASE;
                 StartCoroutine(EnemyPhase());
             }
@@ -231,6 +246,8 @@ public class BattleStstem : MonoBehaviour
         else
         {
             dialogueText.text = "Can't abscond " + playerHUD.playerName;
+            yield return new WaitForSeconds(1f);
+            currState = BattleState.PLAYERPHASE;
             PlayerPhase();
         }
             
@@ -282,6 +299,8 @@ public class BattleStstem : MonoBehaviour
             }
             playerHUD.setHP(DataCarryScript.instance.currHPData);
         }
+
+
         currState = BattleState.ENEMYPHASE;
         StartCoroutine(EnemyPhase());
     }
@@ -367,4 +386,14 @@ public class BattleStstem : MonoBehaviour
         }
         
     }
+
+
+    public void OpenCustomUI()
+    {
+        customisationOptions.transform.GetChild(0).gameObject.SetActive(true);
+        //customPanel = transform.Find("BattleCustomCanvas/CustomisationOptions");
+        //customPanel.gameObject.SetActive(true);
+    }
+
+
 }

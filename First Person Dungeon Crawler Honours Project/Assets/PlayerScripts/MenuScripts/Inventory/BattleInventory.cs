@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 
 using TMPro;
-using UnityEditor.UI;
 
 public class BattleInventory : MonoBehaviour
 {

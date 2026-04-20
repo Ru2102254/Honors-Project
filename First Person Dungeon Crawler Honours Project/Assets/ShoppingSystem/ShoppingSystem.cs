@@ -11,6 +11,7 @@ public class ShoppingSystem : MonoBehaviour
     public TextMeshProUGUI ShoppingText;
     public HUDScript playerHUD;
 
+    public TextMeshProUGUI MoneyAmount;
 
     private InventoryScript inventory;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +24,7 @@ public class ShoppingSystem : MonoBehaviour
         inventory = new InventoryScript();
         uiInventory.SetInventory(inventory);
         playerHUD.setHUD();
+        MoneyAmount.text = DataCarryScript.instance.CurrMoneyData.ToString();
     }
 
 
@@ -44,6 +46,7 @@ public class ShoppingSystem : MonoBehaviour
             inventory.AddItem(item);
             MainInventory.AddItem(item);
             DataCarryScript.instance.currMoneydata -= item.ItemCost;
+            MoneyAmount.text =  DataCarryScript.instance.CurrMoneyData.ToString();
         }
 
     }
